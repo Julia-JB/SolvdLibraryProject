@@ -15,9 +15,9 @@ public class User implements Formattable {
     private String email;
     private String phoneNumber;
     private boolean isStudent;
-    private final List<LibraryItem> borrowedItems;
-    private final List<LibraryItem> checkedOutItems;
-    private final List<LibraryItem> itemsOnHold;
+    private List<LibraryItem> borrowedItems;
+    private List<LibraryItem> checkedOutItems;
+    private List<LibraryItem> itemsOnHold;
     private double totalPriceCheckedItems = 0;
     Logger logger = LogManager.getLogger(LibrarySystem.class);
 

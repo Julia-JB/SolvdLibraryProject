@@ -92,8 +92,14 @@ public class Main {
         Event event2 = new Event("Uptown kids Adventures", LocalDate.of(2023,
                 6, 12 ), EventType.CHILDREN_STORY_TIME, true);
 
-        // Adding users to library event
+        // Adding users to library event - Custom LinkedList methods are used in this part
         event1.addUserToEvent(user2);
+        event1.addUserToEvent(user1);
+        event1.addUserToEvent(user3);
+        event1.printEventAttendees();
+        event1.removeEventAttendee(user3);
+        event1.removeEventAttendee(user5); // 'Element is not in the list' message output
+        event1.printEventAttendees(); // Event attendees list after the removal
 
         // Instantiating the Librarian class
         Librarian librarian = new Librarian(1, "Dorothy Hudson", 25);

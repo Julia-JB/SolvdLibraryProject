@@ -8,7 +8,7 @@ public class Event {
     private LocalDate eventDate;
     private EventType eventType;
     private boolean familyEvent;
-    private final List<User> eventVisitors = new ArrayList<>();
+    private LinkedListCustom<User> eventList;
 
     // Constructor
     public Event(String eventName, LocalDate eventDate, EventType eventType, boolean familyEvent) {
@@ -16,6 +16,7 @@ public class Event {
         this.eventDate = eventDate;
         this.eventType = eventType;
         this.familyEvent = familyEvent;
+        eventList  = new LinkedListCustom<User>();
     }
 
     // Getters and Setters
@@ -59,6 +60,15 @@ public class Event {
      * @param user
      */
     public void addUserToEvent(User user) {
-        eventVisitors.add(user);
+        eventList.add(eventList, user);
+    }
+
+    public void printEventAttendees() {
+        System.out.println("Event attendees are:");
+        eventList.printCustomList(eventList);
+    }
+
+    public void removeEventAttendee(User user) {
+        eventList.remove(eventList, user);
     }
 }
