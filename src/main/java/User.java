@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -8,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-
 
 public class User implements Formattable {
     //Fields
@@ -161,8 +159,9 @@ public class User implements Formattable {
         }
         return totalPriceCheckedItems;
     }
+
     /**
-     * This method prints a checked out receipt for the user
+     * This method formats a receipt upon the user's checkout
      */
     public String formatReceipt() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
@@ -187,6 +186,9 @@ public class User implements Formattable {
         return sb.toString();
     }
 
+    /**
+     * This method prints the receipt upon the user's checkout
+     */
     public void printReceipt() {
         logger.info(formatReceipt());
     }

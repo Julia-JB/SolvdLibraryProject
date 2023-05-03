@@ -1,10 +1,8 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.*;
 
 public class LibrarySystem implements Searchable, Printable {
-
     // Fields
     public static String libraryName;
     public static String libraryPhoneNumber;

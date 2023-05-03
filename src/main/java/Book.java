@@ -3,7 +3,6 @@
     import org.apache.logging.log4j.Logger;
 
     public class Book extends LibraryItem {
-
     // Fields
         private BookGenre genre;
         private String isbn;

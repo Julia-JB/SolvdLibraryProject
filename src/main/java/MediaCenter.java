@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.text.NumberFormat;
 import java.util.Locale;
 
@@ -46,7 +45,6 @@ public final class MediaCenter implements UsageCostCalculator {
     public void setStudentDiscount() {
         studentDiscountPercent = studentDiscountPercent;
     }
-
 
     // Method for cost calculation is provided in UsageCostCalculator interface
 
