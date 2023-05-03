@@ -125,7 +125,7 @@ public class LibrarySystem implements Searchable, Printable {
     public void printTotalNumberOfUsers() {
         logger.info("Total number of users: " + LibrarySystem.totalNumberOfUsers);
     }
-    }
+}
 
 
 

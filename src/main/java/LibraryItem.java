@@ -110,6 +110,7 @@ abstract class LibraryItem {
     public boolean isOnHold() {
         return onHold;
     }
+
     public LocalDate getDateOnHold() {
         return dateOnHold;
     }
@@ -130,7 +131,6 @@ abstract class LibraryItem {
                 addToCheckedOutItems(user);
                 addToBorrowedItems(user);
                 LibrarySystem.totalItemsCheckout += 1;
-
             } else {
                 throw new NoAvailableItemsException("Sorry, this item is not available. You can place a hold on it.");
             }
@@ -143,7 +143,10 @@ abstract class LibraryItem {
         }
     }
 
-
+    /**
+     * This method adds the item to the list of the items checked out by the user
+     * @param user
+     */
     public void addToCheckedOutItems(User user) {
         user.getCheckedOutItems().add(this);
     }
@@ -174,6 +177,10 @@ abstract class LibraryItem {
         }
     }
 
+    /**
+     * This method adds an items to the list of items the user put on hold
+     * @param user
+     */
     public void addToHoldItems(User user) {
         user.getItemsOnHold().add(this);
     }
@@ -194,8 +201,15 @@ abstract class LibraryItem {
         user.getBorrowedItems().remove(this);
     }
 
+    /**
+     * Abstract method to be implemented by child classes
+     * @return
+     */
     abstract String formatJSON();
 
+    /**
+     * This method prints the item info in JSON format
+     */
     public void printItemJSON() {
         logger.info(formatJSON());
     }
