@@ -1,6 +1,7 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+// Implemented in Event class, stores library event attendees
 public class LinkedListCustom <E> {
 	Node head;
 	Node tail;
