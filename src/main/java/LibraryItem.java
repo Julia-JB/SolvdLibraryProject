@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 
 abstract class LibraryItem {
-    private static final Logger logger = LogManager.getLogger(LibraryItem.class);
+
     // Fields
     private int id;
     private String itemType;
@@ -17,6 +17,7 @@ abstract class LibraryItem {
     private LocalDate returnDate;
     private boolean onHold;
     private LocalDate dateOnHold;
+    Logger logger = LogManager.getLogger(LibraryItem.class);
 
     // Constructor
     public LibraryItem() {
@@ -164,13 +165,12 @@ abstract class LibraryItem {
      * @param user
      */
     public void placeHold(User user) {
-        Logger logger = LogManager.getLogger(LibraryItem.class);
         if (!this.available) {
             this.setOnHold();
             addToHoldItems(user);
             logger.info("You successfully placed  a hold on the item " + this);
         } else {
-            logger.info("This item is available");
+            logger.warn("This item is available");
         }
     }
 
@@ -197,7 +197,6 @@ abstract class LibraryItem {
     abstract String formatJSON();
 
     public void printItemJSON() {
-        Logger logger = LogManager.getLogger(LibraryItem.class);
         logger.info(formatJSON());
     }
 }
