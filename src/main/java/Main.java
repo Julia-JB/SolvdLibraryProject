@@ -52,20 +52,22 @@ public class Main {
 
         // Printing return date for the item based on 21-day period starting today
         user1.printReturnDateForItem(cd1); // Output: Please return the cd "Origins" by May 16, 2023
+
+        // Printing a receipt upon the checkout
         user1.printReceipt();
 
         // Returning the item
         book1.returnItem(user1);
         cd1.returnItem(user1);
 
-        // Printing user's updated info after items were returned
+        // Printing user's updated info after the items were returned
         user1.printUserInfo();
 
-        // Printing out all library users and their number
+        // Printing out all library users
         librarySystem.printAllUsers();
         librarySystem.printTotalNumberOfUsers();
 
-        // Searching for an item by the author
+        // Searching for an item by the author and title (case-insensitive)
         librarySystem.findItemByAuthor("London"); // Output: The Call of the Wild - Jack London
         librarySystem.findItemByTitle("origins"); //
 
@@ -86,7 +88,7 @@ public class Main {
         // Adding users to library event
         event1.addUserToEvent(user2);
 
-        // Instantiating Librarian class
+        // Instantiating the Librarian class
         Librarian librarian = new Librarian(1, "Dorothy Hudson", 25);
 
         // Printing formatted librarian wages
@@ -104,9 +106,5 @@ public class Main {
 
         // Printing total number of items checked out from the library
         logger.info("Total items checkouts: " + LibrarySystem.totalItemsCheckout);
-
-        // Testing logger output
-        logger.info("Library users: " + LibrarySystem.users.toString());
-        logger.info("Number of library users " + LibrarySystem.users.size());
     }
 }
