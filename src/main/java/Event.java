@@ -1,6 +1,7 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Event {
     // Fields
@@ -9,6 +10,7 @@ public class Event {
     private EventType eventType;
     private boolean familyEvent;
     private LinkedListCustom<User> eventList;
+
 
     // Constructor
     public Event(String eventName, LocalDate eventDate, EventType eventType, boolean familyEvent) {
@@ -64,7 +66,8 @@ public class Event {
     }
 
     public void printEventAttendees() {
-        System.out.println("Event attendees are:");
+        Logger logger = LogManager.getLogger(LibrarySystem.class);
+        logger.info("Event attendees are:");
         eventList.printCustomList(eventList);
     }
 

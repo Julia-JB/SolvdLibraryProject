@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 abstract class LibraryItem {
     // Fields
     private int id;
-    private String itemType;
+    public String itemType;
     private String title;
     private String author;
     private double price;
