@@ -7,8 +7,9 @@ public class Main {
         Logger logger = LogManager.getLogger(Main.class);
 
         // Instantiating LibrarySystem
-        LibrarySystem librarySystem = new LibrarySystem("Uptown Library", "425-778-21-48",
-                "www.uptown-library.org");
+        LibrarySystem librarySystem = new LibrarySystem("Uptown Library",
+                "425-778-21-48", "www.uptown-library.org");
+
         // Creating users
         UserFileReader reader = new UserFileReader(UserFileReader.userdata);
         UserFileReader.createUsers(5);
@@ -19,14 +20,18 @@ public class Main {
         User user5 = LibrarySystem.users.get(4);
 
         // Creating library items
-        Book book1 = new Book(1, "book","To the Lighthouse", "Virginia Woolf", 14.50, true,
-                3, BookGenre.ROMANCE, "8365781899458", 209);
+        Book book1 = new Book(1, "book","To the Lighthouse",
+                "Virginia Woolf", 14.50, true, 3,
+                BookGenre.ROMANCE, "8365781899458", 209);
 
-        Book book2 = new Book(2, "book",  "The Call of the Wild", "Jack London", 12.80, true,
-                2, BookGenre.FICTION, "9788838439018", 46);
+        Book book2 = new Book(2, "book",  "The Call of the Wild",
+                "Jack London", 12.80, true, 2,
+                BookGenre.FICTION, "9788838439018", 46);
 
-        ChildrenBook book3 = new ChildrenBook(1, "children's book","The Lion, the Witch and the Wardrobe", "C.S. Lewis", 17.10, true,
-                2, BookGenre.CHILDRENS_CHAPTER_BOOK, "9780064404990", 208, "grades: 5-8");
+        ChildrenBook book3 = new ChildrenBook(1, "children's book",
+                "The Lion, the Witch and the Wardrobe", "C.S. Lewis", 17.10,
+                true, 2, BookGenre.CHILDRENS_CHAPTER_BOOK,
+                "9780064404990", 208, "grades: 5-8");
 
         CD cd1 = new CD(1, "cd", "Origins", "Imagine Dragons", 12.99, true, 2, "40:02");
 
@@ -82,8 +87,10 @@ public class Main {
         mediaCenter.printUsageCost(user2, 12, 10);
 
         // Creating a library event
-        Event event1 = new Event("Spring Book Fair", LocalDate.of(2023, 5, 1), EventType.BOOK_SALE, true);
-        Event event2 = new Event("Uptown kids Adventures", LocalDate.of(2023,6, 12 ), EventType.CHILDREN_STORY_TIME, true);
+        Event event1 = new Event("Spring Book Fair", LocalDate.of(2023, 5,
+                1), EventType.BOOK_SALE, true);
+        Event event2 = new Event("Uptown kids Adventures", LocalDate.of(2023,
+                6, 12 ), EventType.CHILDREN_STORY_TIME, true);
 
         // Adding users to library event
         event1.addUserToEvent(user2);
