@@ -119,5 +119,8 @@ public class Main {
 
         // Printing total number of items checked out from the library
         logger.info("Total items checkouts: " + LibrarySystem.totalItemsCheckout);
+
+        // Printing items in the hold queue
+        librarySystem.printQueueItems();
     }
 }

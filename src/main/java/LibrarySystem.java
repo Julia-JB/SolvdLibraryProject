@@ -14,14 +14,16 @@ public class LibrarySystem implements Searchable, Printable {
     public static int totalNumberOfLibraryItems;
     public static int totalBooksCheckout;
     public static int totalItemsCheckout;
-    Logger logger = LogManager.getLogger(LibrarySystem.class);
+    private static Queue<HoldItem> holdQueue = new LinkedList<>();
 
+    Logger logger = LogManager.getLogger(LibrarySystem.class);
 
     // Constructor
     public LibrarySystem(String libraryName, String libraryPhoneNumber, String libraryWebsite) {
         LibrarySystem.libraryName = libraryName;
         LibrarySystem.libraryPhoneNumber = libraryPhoneNumber;
         LibrarySystem.libraryWebsite = libraryWebsite;
+        LibrarySystem.holdQueue = holdQueue;
     }
 
     // Methods
@@ -122,6 +124,36 @@ public class LibrarySystem implements Searchable, Printable {
      */
     public void printTotalNumberOfUsers() {
         logger.info("Total number of users: " + LibrarySystem.totalNumberOfUsers);
+    }
+
+    /** This method adds items to the hold queue
+     *
+     * @param holdItem
+     */
+    public static void addToHoldQueue(HoldItem holdItem) {
+        holdQueue.add(holdItem);
+    }
+
+    /** This method removes item from the hold queue
+     * @param holdItem
+     */
+    public void removeFromHoldQueue(HoldItem holdItem) {
+        holdQueue.remove(holdItem);
+    }
+
+    /**
+     * This method checks if a user has placed a hold on the item - not implemented yet
+     * @param
+     * @return boolean
+     */
+
+    /**
+     * This method prints the items in the hold queue
+     */
+    public void printQueueItems() {
+        for (HoldItem holdItem : holdQueue) {
+            logger.info(holdItem.toString());
+        }
     }
 }
 

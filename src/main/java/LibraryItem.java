@@ -1,6 +1,8 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 
 abstract class LibraryItem {
     // Fields
@@ -169,6 +171,9 @@ abstract class LibraryItem {
         if (!this.available) {
             this.setOnHold();
             addToHoldItems(user);
+            LocalDateTime currentDate = LocalDateTime.now();
+            HoldItem holdItem = new HoldItem<>(this, user, currentDate);
+            LibrarySystem.addToHoldQueue(holdItem);
             logger.info("You successfully placed  a hold on the item " + this);
         } else {
             logger.warn("This item is available");
