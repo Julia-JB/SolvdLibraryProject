@@ -47,7 +47,7 @@ public class Main {
 
         // Printing user's info in different formats
         user1.printUserInfo();
-        user1.printUserJson();
+        user1.printUserJSON();
 
         // Checking out items
         book1.checkoutBook(user1);
@@ -94,9 +94,9 @@ public class Main {
                 6, 12 ), EventType.CHILDREN_STORY_TIME, true);
 
         // Adding users to library event - Custom LinkedList methods are used in this part
-        event1.addUserToEvent(user2);
-        event1.addUserToEvent(user1);
-        event1.addUserToEvent(user3);
+        event1.addEventAttendee(user2);
+        event1.addEventAttendee(user1);
+        event1.addEventAttendee(user3);
         event1.printEventAttendees();
         event1.removeEventAttendee(user3);
         event1.removeEventAttendee(user5); // 'Element is not in the list' message output
@@ -105,24 +105,26 @@ public class Main {
         // Instantiating the Librarian class
         Librarian librarian = new Librarian(1, "Dorothy Hudson", 25);
 
-        // Printing formatted librarian wages
+        // Printing formatted librarian wages with and without hours worked overtime
         librarian.printWages(38);
+        librarian.printWages(40, 6);
 
-        // Testing placeHold() functionality
+        // Testing placeHold() functionality. It can only be invoked if the item is currently
+        // unavailable based on initial number of the items and item's checkouts
         book2.checkoutBook(user5);
         book2.placeHold(user5);
         book1.placeHold(user4);
         user1.printItemsBorrowedByUser();
         user5.printItemsOnHold();
 
+        // Printing items in the hold queue
+        librarySystem.printQueueItems();
+
         // Printing total number of books checked out from the library
         logger.info("Total books checkouts: " + LibrarySystem.totalBooksCheckout);
 
         // Printing total number of items checked out from the library
         logger.info("Total items checkouts: " + LibrarySystem.totalItemsCheckout);
-
-        // Printing items in the hold queue
-        librarySystem.printQueueItems();
 
         // Printing the number of unique words to file
         // Output: "There are 21 unique words in the text"

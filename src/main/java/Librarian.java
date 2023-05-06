@@ -56,7 +56,17 @@ public class Librarian implements WagesCalculator {
             if (hoursWorked > 0) {
                 return this.hourlyRate * hoursWorked;
             } throw new InvalidHoursWorkedException("Hours of work should be greater than zero");
+    }
 
+    /**
+     * Method overloading
+     * This method calculates librarian wages based on hourly rate, regular hours of work and
+     * overtime hours
+     */
+    public int calculateWages(int hoursWorked, int hoursOvertime) {
+        if (hoursWorked > 0 && hoursOvertime > 0) {
+            return (int) (hourlyRate * hoursWorked + hourlyRate * 1.5 * hoursOvertime);
+        } throw new InvalidHoursWorkedException("Hours of work should be greater than zero");
     }
 
     /**
@@ -66,4 +76,16 @@ public class Librarian implements WagesCalculator {
         String formattedWage = NumberFormat.getCurrencyInstance(Locale.US).format(calculateWages(hoursWorked));
         System.out.println("The wage is " + formattedWage);
     }
+    /**
+     * Method overloading
+     * This method prints out librarian wages with overtime work
+     */
+    public void printWages(int hoursWorked, int hoursOvertime) {
+        String formattedWage =
+                NumberFormat.getCurrencyInstance(Locale.US).format(calculateWages(hoursWorked,
+                        hoursOvertime));
+        System.out.println("The wage is " + formattedWage);
+    }
+
+
 }

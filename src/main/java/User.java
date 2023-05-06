@@ -149,7 +149,7 @@ public class User implements Formattable {
     /**
      * This method prints out user info in the JSON format
      */
-    public void printUserJson() {
+    public void printUserJSON() {
         logger.info(formatJSON());
     }
 

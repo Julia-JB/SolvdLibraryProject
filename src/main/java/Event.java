@@ -60,7 +60,7 @@ public class Event {
      * The method adds a user to library event
      * @param user
      */
-    public void addUserToEvent(User user) {
+    public void addEventAttendee(User user) {
         eventList.add(eventList, user);
     }
 
