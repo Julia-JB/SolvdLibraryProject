@@ -1,6 +1,7 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.time.LocalDate;
+import static uniqueWords.UniqueWords.uniqueWords;
 
 public class Main {
     public static void main(String[] args) {
@@ -122,5 +123,10 @@ public class Main {
 
         // Printing items in the hold queue
         librarySystem.printQueueItems();
+
+        // Printing the number of unique words to file
+        // Output: "There are 21 unique words in the text"
+        uniqueWords("my-app/src/main/resources/libraryPromo.txt");
+
     }
 }

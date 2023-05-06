@@ -100,6 +100,7 @@ abstract class LibraryItem {
             if (returnDate == null) {
                 logger.info("User returned this item");
             }
+
         return returnDate;
     }
 
