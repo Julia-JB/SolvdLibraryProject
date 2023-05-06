@@ -70,7 +70,7 @@ public class Main {
         user1.printUserInfo();
 
         // Printing out all library users
-        librarySystem.printAllUsers();
+        librarySystem.printAllUsersNames();
         librarySystem.printTotalNumberOfUsers();
 
         // Searching for an item by the author and title (case-insensitive)
@@ -103,7 +103,7 @@ public class Main {
         event1.printEventAttendees(); // Event attendees list after the removal
 
         // Instantiating the Librarian class
-        Librarian librarian = new Librarian(1, "Dorothy Hudson", 25);
+        Employee librarian = new Employee(1, "Dorothy Hudson", 25);
 
         // Printing formatted librarian wages with and without hours worked overtime
         librarian.printWages(38);

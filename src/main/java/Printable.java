@@ -1,5 +1,5 @@
 public interface Printable {
-    void printAllUsers();
+    void printAllUsersNames();
 
     /**
      * This method prints total number of library users

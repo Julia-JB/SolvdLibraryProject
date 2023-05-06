@@ -8,7 +8,6 @@ public final class MediaCenter implements UsageCostCalculator {
     static float copyPrice;
     static float scanPrice;
     static byte studentDiscountPercent;
-
     static {
         copyPrice = 0.2f;
         scanPrice = 0.4f;

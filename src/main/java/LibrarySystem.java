@@ -110,13 +110,10 @@ public class LibrarySystem implements Searchable, Printable {
     /**
      * This method prints names of all users
      */
-    public void printAllUsers() {
+    public void printAllUsersNames() {
         List<String> userNames = new ArrayList<>();
-
-        for (User user : LibrarySystem.users) {
-            userNames.add(user.getName());
-        }
-        logger.info("Users of the Library:" + userNames);
+        users.forEach(user -> userNames.add(user.getName()));
+        logger.info("The users of the library are: " + userNames);
     }
 
     /**

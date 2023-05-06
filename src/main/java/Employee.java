@@ -1,7 +1,7 @@
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Librarian implements WagesCalculator {
+public class Employee implements WagesCalculator {
     // Fields
     private int id;
     private String name;
@@ -9,7 +9,7 @@ public class Librarian implements WagesCalculator {
     private int hoursWorked;
 
     // Constructor
-    public Librarian(int id, String name, int hourlyRate) {
+    public Employee(int id, String name, int hourlyRate) {
         this.id = id;
         this.name = name;
         this.hourlyRate = hourlyRate;
@@ -86,6 +86,4 @@ public class Librarian implements WagesCalculator {
                         hoursOvertime));
         System.out.println("The wage is " + formattedWage);
     }
-
-
 }
