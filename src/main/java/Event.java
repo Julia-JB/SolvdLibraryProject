@@ -11,7 +11,6 @@ public class Event {
     private boolean familyEvent;
     private LinkedListCustom<User> eventList;
 
-
     // Constructor
     public Event(String eventName, LocalDate eventDate, EventType eventType, boolean familyEvent) {
         this.eventName = eventName;

@@ -29,8 +29,7 @@ public class UniqueWords {
 		HashSet<String> uniqueWords = new HashSet<>(Arrays.asList(words));
 		String wordsNumber = "\n There are " + uniqueWords.size() + " unique words in the text.";
 
-		try { FileUtils.writeStringToFile(file, wordsNumber, "UTF-8",
-				true);
+		try { FileUtils.writeStringToFile(file, wordsNumber, "UTF-8", true);
 		} catch (IOException e) {
 			logger.error("Error writing to file: " + e.getMessage());
 		}
