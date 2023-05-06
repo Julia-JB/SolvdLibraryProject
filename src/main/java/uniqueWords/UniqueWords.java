@@ -22,9 +22,9 @@ public class UniqueWords {
 		}
 
 		String[] words = StringUtils.normalizeSpace(text)
-						.replaceAll("[^a-zA-Z ]", "")
-						.toLowerCase()
-						.split("\\s+");
+									.replaceAll("[^a-zA-Z ]", "")
+									.toLowerCase()
+									.split("\\s+");
 
 		HashSet<String> uniqueWords = new HashSet<>(Arrays.asList(words));
 		String wordsNumber = "\n There are " + uniqueWords.size() + " unique words in the text.";
