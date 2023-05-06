@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class UniqueWords {
 
-	public static void uniqueWords(String promoText) {
+	public static void getUniqueWords(String promoText) {
 		File file = new File(promoText);
 		Logger logger = LogManager.getLogger(UniqueWords.class);
 		String text = "";
