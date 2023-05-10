@@ -51,21 +51,22 @@ public class Main {
         user1.printUserJSON();
 
         // Checking out items
+        logger.info("Here " + book2.getNumberOfItemsAvailable());
+        logger.info(book2.isAvailable());
         book1.checkoutBook(user1);
         book2.checkoutBook(user2);
         book2.checkoutBook(user4);
         book3.checkoutBook(user1);
         cd1.checkoutItem(user3);
 
-        // Printing return date for the item based on 21-day period starting today
-        user1.printReturnDateForItem(cd1); // Output: Please return the cd "Origins" by May 16, 2023
+        logger.info("Here " + book2.getNumberOfItemsAvailable());
+        logger.info(book2.isAvailable());
 
         // Printing a receipt upon the checkout
         user1.printReceipt();
 
         // Returning the item
         book1.returnItem(user1);
-        cd1.returnItem(user1);
 
         // Printing user's updated info after the items were returned
         user1.printUserInfo();
@@ -113,9 +114,11 @@ public class Main {
 
         // Testing placeHold() functionality. It can only be invoked if the item is currently
         // unavailable based on initial number of the items and item's checkouts
-        book2.checkoutBook(user5);
+        book2.checkoutBook(user5); // This item is not available
+        logger.info("Here " + book2.getNumberOfItemsAvailable());
+        logger.info(book2.isAvailable());
         book2.placeHold(user5);
-        book1.placeHold(user4);
+        book1.placeHold(user4); //This item is available
         user1.printItemsBorrowedByUser();
         user5.printItemsOnHold();
 
@@ -139,5 +142,12 @@ public class Main {
         librarySystem.getItemsNotAvailable();
 
         searchService.findItemByTitleAndAuthor("wild", "London");
+
+        librarySystem.updateBorrowedItemsMap(user1);
+        librarySystem.updateBorrowedItemsMap(user2);
+        librarySystem.updateBorrowedItemsMap(user3);
+
+        logger.info(LibrarySystem.usersBorrowedItemsMap);
+        logger.info(usersSystem.getUsersWithOverdueItems());
     }
 }

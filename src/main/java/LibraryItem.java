@@ -92,19 +92,16 @@ abstract class LibraryItem {
     public void setNumberOfItemsAvailable(int numberOfItemsAvailable) {
         this.numberOfItemsAvailable = numberOfItemsAvailable;
     }
-
     public void setReturnDate() {
         LocalDate today = LocalDate.now();
         this.returnDate = today.plusDays(MAX_DAYS_LOAN);
     }
 
     public LocalDate getReturnDate() {
-            if (returnDate == null) {
-                logger.info("User returned this item");
-            }
-
+//            if (returnDate == null) {
+//                logger.info("User returned this item");
         return returnDate;
-    }
+            }
 
     public void setOnHold() {
         this.onHold = true;
@@ -129,7 +126,7 @@ abstract class LibraryItem {
     public void checkoutItem(User user) {
         try {
             if (this.available) {
-                numberOfItemsAvailable -= 1;
+                numberOfItemsAvailable -=1;
                 setReturnDate();
                 addToCheckedOutItems(user);
                 addToBorrowedItems(user);

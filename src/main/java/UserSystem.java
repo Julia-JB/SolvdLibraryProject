@@ -1,6 +1,7 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +48,32 @@ public class UserSystem implements Printable {
 		logger.info(usersWithBorrowedItems);
 		return usersWithBorrowedItems;
 	}
+
+	public HashMap<User, List<LibraryItem>> getUsersWithOverdueItems() {
+		HashMap<User, List<LibraryItem>> usersWithOverdueItems = new HashMap<>();
+		for (User user : users) {
+			List<LibraryItem> overdueItems = new ArrayList<>();
+
+			if (user.getBorrowedItems().size() != 0) {
+				for (LibraryItem item : user.getBorrowedItems()) {
+					if (LocalDate.now().isAfter(item.getReturnDate())) {
+						overdueItems.add(item);
+					}
+				}
+
+				if (!overdueItems.isEmpty()) {
+					usersWithOverdueItems.put(user, overdueItems);
+				}
+			}
+		}
+		if (usersWithOverdueItems.size() == 0) {
+			logger.info("No users with overdue items");
+		}
+		return usersWithOverdueItems;
+	}
+
+
+
 
 	/**
 	 * This method displays a list of student users.

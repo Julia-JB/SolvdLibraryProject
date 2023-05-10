@@ -97,8 +97,10 @@
         public void checkoutBook(User user) {
             if (isAvailable()) {
                 updateCheckoutCounter();
+                checkoutItem(user);
+            } else {
+                logger.warn("This item is not available");
             }
-            checkoutItem(user);
         }
 
         /**

@@ -12,6 +12,7 @@ public class LibrarySystem {
 
     protected static List<LibraryItem> items = new ArrayList<>();
     public static Queue<HoldItem> holdQueue = new LinkedList<>();
+    public static Map<Integer, List<LibraryItem>> usersBorrowedItemsMap = new HashMap<>();
 
     Logger logger = LogManager.getLogger(LibrarySystem.class);
 
@@ -24,7 +25,6 @@ public class LibrarySystem {
     }
 
     // Methods
-
     /**
      * This method adds a library item to the list of library items and increments the total number of library
      * items counter
@@ -34,6 +34,17 @@ public class LibrarySystem {
         items.add(item);
     }
 
+    /**
+     * This method updates the map of users and items that they have borrowed
+     * @param user
+     */
+    public void updateBorrowedItemsMap(User user) {
+        usersBorrowedItemsMap.put(user.getId(), user.getBorrowedItems());
+    }
+
+    /**
+     * This method displays items that are overdue
+     */
     public List<LibraryItem> getItemsOverdue() {
         List<LibraryItem> itemsOverdue = FilterLambda.filter(items, FilterLambda.isOverdue);
         logger.info(itemsOverdue);
@@ -55,6 +66,8 @@ public class LibrarySystem {
 
         return itemsNotAvailable;
     }
+
+
 }
 
 

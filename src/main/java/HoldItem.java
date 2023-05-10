@@ -24,8 +24,8 @@ public class HoldItem <T> {
 		return user;
 	}
 
-	/** This method adds items to the hold queue
-	 *
+	/**
+	 * This method adds items to the hold queue
 	 * @param holdItem
 	 */
 	public static void addToHoldQueue(HoldItem holdItem) {
@@ -35,10 +35,9 @@ public class HoldItem <T> {
 	/** This method removes item from the hold queue
 	 * @param holdItem
 	 */
-	public void removeFromHoldQueue(HoldItem holdItem) {
+	public static void removeFromHoldQueue(HoldItem holdItem) {
 		LibrarySystem.holdQueue.remove(holdItem);
 	}
-
 
 	/**
 	 * This method prints the items in the hold queue

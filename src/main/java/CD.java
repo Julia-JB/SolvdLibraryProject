@@ -1,7 +1,8 @@
+import java.time.LocalDate;
+
 public class CD extends LibraryItem {
     // Fields
     private String length;
-
     // Constructor
     public CD(int id, String itemType, String title, String author, double price, boolean available,
               int numberOfItemsAvailable, String length) {
@@ -40,5 +41,9 @@ public class CD extends LibraryItem {
                         "\n \"available\": %b, \n \"itemsAvailable\": %d \n}",
                 getId(), getItemType(), getTitle(), getAuthor(), length, isAvailable(), getNumberOfItemsAvailable());
         return jsonString;
+    }
+
+    public void checkoutCD(User user) {
+        checkoutItem(user);
     }
 }
