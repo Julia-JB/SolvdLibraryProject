@@ -1,19 +1,21 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class LibrarySystem implements Searchable, Printable {
     // Fields
     public static String libraryName;
     public static String libraryPhoneNumber;
     public static String libraryWebsite;
-    public static List<User> users = new ArrayList<>();
-    protected static List<LibraryItem> items = new ArrayList<>();
-    public static Map<String, Integer> bookCounts = new HashMap<>();
     public static int totalNumberOfUsers;
     public static int totalNumberOfLibraryItems;
     public static int totalBooksCheckout;
     public static int totalItemsCheckout;
+    public static List<User> users = new ArrayList<>();
+    protected static List<LibraryItem> items = new ArrayList<>();
+    public static Map<String, Integer> bookCounts = new HashMap<>();
     private static Queue<HoldItem> holdQueue = new LinkedList<>();
 
     Logger logger = LogManager.getLogger(LibrarySystem.class);
@@ -47,35 +49,34 @@ public class LibrarySystem implements Searchable, Printable {
     /**
      * This method searches for an item by its author
      */
-    public void findItemByAuthor(String author) {;
-        boolean found = false;
+    public void findItemByAuthor(String author) {
+        List<LibraryItem> itemsFound = Search.searchItems(items, Search.searchByAuthor(author));
 
-        for (LibraryItem item : items) {
-            if (item.getAuthor().toLowerCase().contains(author.toLowerCase())) {
-                logger.info(item.getItemType() + ": " + item.getTitle() + " - " + item.getAuthor());
-                found = true;
-            }
-        } if (!found) {
-            logger.warn("Item not found. Please check your request and try again");
-        }
+        String message = Search.messageFunction.apply(itemsFound);
+        logger.info(message);
     }
 
     /**
      * This method searches for an item by its title
      */
     public void findItemByTitle(String title) {
-        boolean found = false;
+        List<LibraryItem> itemsFound = Search.searchItems(items, Search.searchByTitle(title));
 
-        for (LibraryItem item : items) {
-            if (item.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                logger.info(item.getItemType() + ": " + item.getTitle() + " - " + item.getAuthor());
-                found = true;
-            }
+        String message = Search.messageFunction.apply(itemsFound);
+        logger.info(message);
         }
-        if (!found) {
-            logger.warn("Item not found. Please check your request and try again");
-        }
-    }
+
+    /**
+     * This method searches for an item by its title and author.
+     * It combines predicates.
+     */
+     public void findItemByTitleAndAuthor(String title, String author) {
+         List<LibraryItem> itemsFound = Search.searchItems(items,
+                 Search.searchByTitleAndAuthor(title, author));
+
+         String message = Search.messageFunction.apply(itemsFound);
+         logger.info(message);
+     }
 
     /**
      * This method is invoked on each book checkout and counts the number of times
@@ -100,6 +101,18 @@ public class LibrarySystem implements Searchable, Printable {
     }
 
     /**
+     * This method displays items that are currently unavailable in the library
+     * @return
+     */
+
+    public List<LibraryItem> getItemsNotAvailable() {
+        List<LibraryItem> itemsNotAvailable = Filter.filter(items, Filter.itemNotAvailable);
+        logger.info(itemsNotAvailable);
+
+        return itemsNotAvailable;
+    }
+
+    /**
      * This method prints the item's info.
      */
     public static void printItemInfo(LibraryItem item) {
@@ -107,13 +120,60 @@ public class LibrarySystem implements Searchable, Printable {
         logger.info(item.toString());
     }
 
+    public Map<Integer, Integer> getBorrowedItemsNumber() {
+        Function<User, Integer> countBorrowedItems = user -> user.getBorrowedItems().size();
+        Map<Integer, Integer> userItemsNumber = new HashMap<>();
+
+        users.forEach(user ->
+            userItemsNumber.put(user.getId(), countBorrowedItems.apply(user)));
+
+        logger.info(userItemsNumber);
+        return userItemsNumber;
+    }
+
     /**
-     * This method prints names of all users
+     * This method creates a list of student users.
+     * It uses Predicate and Consumer interfaces.
+     * @return
+     */
+    public List<User> getStudentUsers() {
+        List<User> studentUsers = Filter.filter(users, Filter.studentUser);
+        return studentUsers;
+    }
+
+    /**
+     * This method prints the list of student users
+     */
+    public void printStudentUsers() {
+        System.out.println(getStudentUsers());
+    }
+
+    /**
+     * This method displays all users that have borrowed items
+     * @return
+     */
+    public List<User> getUsersWithBorrowedItems() {
+        List<User> usersWithBorrowedItems = Filter.filter(users, Filter.hasBorrowedItems);
+        logger.info(usersWithBorrowedItems);
+        return usersWithBorrowedItems;
+    }
+
+    /**
+     * This method prints names of all users. Consumer functional interface is used
      */
     public void printAllUsersNames() {
         List<String> userNames = new ArrayList<>();
         users.forEach(user -> userNames.add(user.getName()));
         logger.info("The users of the library are: " + userNames);
+    }
+
+    public void findUserByName(String name) {
+        List<User> usersFound = Search.searchItems(users, Search.searchByName(name));
+        if (usersFound.size() > 0) {
+            logger.info(usersFound);
+        } else {
+            logger.warn("No matching users found");
+        }
     }
 
     /**

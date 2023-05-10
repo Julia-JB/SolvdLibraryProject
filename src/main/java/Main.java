@@ -75,7 +75,8 @@ public class Main {
 
         // Searching for an item by the author and title (case-insensitive)
         librarySystem.findItemByAuthor("London"); // Output: The Call of the Wild - Jack London
-        librarySystem.findItemByTitle("origins"); //
+        librarySystem.findItemByTitle("snow"); //
+
 
         // Printing the number of times each book was checked out
         LibrarySystem.printBookCheckouts();
@@ -129,5 +130,12 @@ public class Main {
         // Printing the number of unique words to file
         // Output: "There are 21 unique words in the text"
         getUniqueWords("my-app/src/main/resources/libraryPromo.txt");
+
+        // Testing methods created with custom lambda functions
+        librarySystem.printStudentUsers();
+        librarySystem.getBorrowedItemsNumber();
+        librarySystem.findItemByTitleAndAuthor("wild", "London");
+        librarySystem.getUsersWithBorrowedItems();
+        librarySystem.getItemsNotAvailable();
     }
 }

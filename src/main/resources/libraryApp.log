@@ -1,10 +1,10 @@
-2023-05-06 12:24:59.945 WARN Book 47 setISBN - Please check the ISBN: ISBN is not valid
-2023-05-06 12:24:59.947 WARN Book 49 setISBN - An issue occurred
+2023-05-09 23:22:42.899 WARN Book 47 setISBN - Please check the ISBN: ISBN is not valid
+2023-05-09 23:22:42.900 WARN Book 49 setISBN - An issue occurred
 InvalidISBNFormatException: ISBN should contain only digits
 	at Book.checkISBN(Book.java:74) ~[classes/:?]
 	at Book.setISBN(Book.java:44) [classes/:?]
 	at Main.main(Main.java:42) [classes/:?]
-2023-05-06 12:24:59.954 INFO LibraryItem 218 printItemJSON - {
+2023-05-09 23:22:42.907 INFO LibraryItem 220 printItemJSON - {
  "id": 1, 
  "type": "book", 
  "title": "To the Lighthouse", 
@@ -14,7 +14,7 @@ InvalidISBNFormatException: ISBN should contain only digits
  "available": true, 
  "itemsAvailable": 3 
 }
-2023-05-06 12:24:59.954 INFO LibraryItem 218 printItemJSON - {
+2023-05-09 23:22:42.908 INFO LibraryItem 220 printItemJSON - {
  "id": 1, 
  "type": "cd", 
  "title": "Origins", 
@@ -23,100 +23,129 @@ InvalidISBNFormatException: ISBN should contain only digits
  "available": true, 
  "itemsAvailable": 2 
 }
-2023-05-06 12:24:59.955 INFO User 136 printUserInfo - 
+2023-05-09 23:22:42.911 INFO User 136 printUserInfo - 
 ----------------------------
 Name:  Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 No borrowed items
-2023-05-06 12:24:59.955 INFO User 153 printUserJSON - {
+2023-05-09 23:22:42.911 INFO User 153 printUserJSON - {
  "id": 1, 
  "name": " Brianna Fuentes", 
  "email": "briannafue@protonmail.net", 
  "isStudent": false 
 }
-2023-05-06 12:24:59.975 INFO User 97 printReturnDateForItem - Please return the cd "Origins" by May 27, 2023
-2023-05-06 12:24:59.983 INFO User 193 printReceipt - 
+2023-05-09 23:22:42.925 INFO User 97 printReturnDateForItem - Please return the cd "Origins" by May 30, 2023
+2023-05-09 23:22:42.931 INFO User 193 printReceipt - 
 ----------------------------
 Check Out Receipt
 Uptown Library
 425-778-21-48
 www.uptown-library.org
-May 06, 2023
+May 09, 2023
 Title: To the Lighthouse
 Title: The Lion, the Witch and the Wardrobe
-Due: May 27, 2023
+Due: May 30, 2023
 Total items: 2
 You just saved $31.60 by using your library. 
 This is suggested retail price of the item(s) checked out.
-2023-05-06 12:24:59.983 INFO User 136 printUserInfo - 
+2023-05-09 23:22:42.931 INFO User 136 printUserInfo - 
 ----------------------------
 Name:  Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 Borrowed items: The Lion, the Witch and the Wardrobe - C.S. Lewis
-2023-05-06 12:24:59.984 INFO LibrarySystem 116 printAllUsersNames - The users of the library are: [ Brianna Fuentes,  Ria Barker,  Matthew Simmons,  Laura Frederick,  Quinn Baldwin]
-2023-05-06 12:24:59.984 INFO LibrarySystem 123 printTotalNumberOfUsers - Total number of users: 5
-2023-05-06 12:24:59.984 INFO LibrarySystem 55 findItemByAuthor - book: The Call of the Wild - Jack London
-2023-05-06 12:24:59.984 INFO LibrarySystem 71 findItemByTitle - cd: Origins - Imagine Dragons
-2023-05-06 12:24:59.984 INFO LibrarySystem 98 printBookCheckouts - Number of book's checkouts by ISBN
-2023-05-06 12:24:59.984 INFO LibrarySystem 99 lambda$printBookCheckouts$0 - ISBN 9780306406157: 1
-2023-05-06 12:24:59.985 INFO LibrarySystem 99 lambda$printBookCheckouts$0 - ISBN 9780064404990: 1
-2023-05-06 12:24:59.985 INFO LibrarySystem 99 lambda$printBookCheckouts$0 - ISBN 9788838439018: 2
-2023-05-06 12:24:59.985 INFO MediaCenter 59 printUsageCost - Please pay $6.40 for using media center resources
-2023-05-06 12:24:59.986 INFO MediaCenter 59 printUsageCost - Please pay $5.12 for using media center resources
-2023-05-06 12:24:59.986 INFO Event 69 printEventAttendees - Event attendees are:
-2023-05-06 12:24:59.987 INFO LinkedListCustom 54 printCustomList - 
+2023-05-09 23:22:42.932 INFO LibrarySystem 167 printAllUsersNames - The users of the library are: [ Brianna Fuentes,  Ria Barker,  Matthew Simmons,  Laura Frederick,  Quinn Baldwin]
+2023-05-09 23:22:42.932 INFO LibrarySystem 183 printTotalNumberOfUsers - Total number of users: 5
+2023-05-09 23:22:42.934 INFO LibrarySystem 56 findItemByAuthor - Item(s) found are [
+Title: The Call of the Wild
+Author: Jack London
+ISBN: 9788838439018]
+2023-05-09 23:22:42.934 INFO LibrarySystem 66 findItemByTitle - No matching item(s) found. Please check your request.
+2023-05-09 23:22:42.935 INFO LibrarySystem 99 printBookCheckouts - Number of book's checkouts by ISBN
+2023-05-09 23:22:42.935 INFO LibrarySystem 100 lambda$printBookCheckouts$0 - ISBN 9780306406157: 1
+2023-05-09 23:22:42.935 INFO LibrarySystem 100 lambda$printBookCheckouts$0 - ISBN 9780064404990: 1
+2023-05-09 23:22:42.935 INFO LibrarySystem 100 lambda$printBookCheckouts$0 - ISBN 9788838439018: 2
+2023-05-09 23:22:42.935 INFO MediaCenter 59 printUsageCost - Please pay $6.40 for using media center resources
+2023-05-09 23:22:42.936 INFO MediaCenter 59 printUsageCost - Please pay $5.12 for using media center resources
+2023-05-09 23:22:42.937 INFO Event 69 printEventAttendees - Event attendees are:
+2023-05-09 23:22:42.937 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name:  Ria Barker, 
 Email: riabarker@outlook.ca, 
 Borrowed items: The Call of the Wild - Jack London
-2023-05-06 12:24:59.987 INFO LinkedListCustom 54 printCustomList - 
+2023-05-09 23:22:42.937 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name:  Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 Borrowed items: The Lion, the Witch and the Wardrobe - C.S. Lewis
-2023-05-06 12:24:59.987 INFO LinkedListCustom 54 printCustomList - 
+2023-05-09 23:22:42.937 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name:  Matthew Simmons, 
 Email: mattsimm@outlook.ca, 
 Borrowed items: Origins - Imagine Dragons
-2023-05-06 12:24:59.987 WARN LinkedListCustom 78 remove - Element is not in the list
-2023-05-06 12:24:59.987 INFO Event 69 printEventAttendees - Event attendees are:
-2023-05-06 12:24:59.987 INFO LinkedListCustom 54 printCustomList - 
+2023-05-09 23:22:42.937 WARN LinkedListCustom 78 remove - Element is not in the list
+2023-05-09 23:22:42.937 INFO Event 69 printEventAttendees - Event attendees are:
+2023-05-09 23:22:42.938 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name:  Ria Barker, 
 Email: riabarker@outlook.ca, 
 Borrowed items: The Call of the Wild - Jack London
-2023-05-06 12:24:59.987 INFO LinkedListCustom 54 printCustomList - 
+2023-05-09 23:22:42.938 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name:  Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 Borrowed items: The Lion, the Witch and the Wardrobe - C.S. Lewis
-2023-05-06 12:24:59.989 WARN LibraryItem 143 checkoutItem - Sorry, this item is not available. You can place a hold on it.
+2023-05-09 23:22:42.938 WARN LibraryItem 145 checkoutItem - Sorry, this item is not available. You can place a hold on it.
 NoAvailableItemsException: Sorry, this item is not available. You can place a hold on it.
-	at LibraryItem.checkoutItem(LibraryItem.java:136) [classes/:?]
+	at LibraryItem.checkoutItem(LibraryItem.java:138) [classes/:?]
 	at Book.checkoutItem(Book.java:5) [classes/:?]
 	at Book.checkoutBook(Book.java:101) [classes/:?]
-	at Main.main(Main.java:114) [classes/:?]
-2023-05-06 12:24:59.989 INFO LibraryItem 178 placeHold - You successfully placed  a hold on the item 
+	at Main.main(Main.java:115) [classes/:?]
+2023-05-09 23:22:42.939 INFO LibraryItem 180 placeHold - You successfully placed  a hold on the item 
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018
-2023-05-06 12:24:59.989 WARN LibraryItem 180 placeHold - This item is available
-2023-05-06 12:24:59.989 INFO User 100 printItemsBorrowedByUser - User  Brianna Fuenteshas borrowed the items: [
+2023-05-09 23:22:42.939 WARN LibraryItem 182 placeHold - This item is available
+2023-05-09 23:22:42.939 INFO User 100 printItemsBorrowedByUser - User  Brianna Fuenteshas borrowed the items: [
 Title: The Lion, the Witch and the Wardrobe
 Author: C.S. Lewis
 ISBN: 9780064404990]
-2023-05-06 12:24:59.989 INFO User 109 printItemsOnHold - User  Quinn Baldwinplaced a hold on the item: [
+2023-05-09 23:22:42.939 INFO User 109 printItemsOnHold - User  Quinn Baldwinplaced a hold on the item: [
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018]
-2023-05-06 12:24:59.990 INFO LibrarySystem 152 printQueueItems - 
+2023-05-09 23:22:42.939 INFO LibrarySystem 212 printQueueItems - 
 ----------------------------
 Name:  Quinn Baldwin, 
 Email: baldwin77@yahoo.ca, 
 Type: book, 
 Title: The Call of the Wild, 
 Author: Jack London
-Date: 2023-05-06 12:24:59
-2023-05-06 12:24:59.990 INFO Main 124 main - Total books checkouts: 4
-2023-05-06 12:24:59.990 INFO Main 127 main - Total items checkouts: 5
+Date: 2023-05-09 23:22:42
+2023-05-09 23:22:42.939 INFO Main 125 main - Total books checkouts: 4
+2023-05-09 23:22:42.939 INFO Main 128 main - Total items checkouts: 5
+2023-05-09 23:22:42.945 INFO LibrarySystem 130 getBorrowedItemsNumber - {1=1, 2=1, 3=1, 4=1, 5=0}
+2023-05-09 23:22:42.946 INFO LibrarySystem 78 findItemByTitleAndAuthor - Item(s) found are [
+Title: The Call of the Wild
+Author: Jack London
+ISBN: 9788838439018]
+2023-05-09 23:22:42.946 INFO LibrarySystem 157 getUsersWithBorrowedItems - [
+----------------------------
+Name:  Brianna Fuentes, 
+Email: briannafue@protonmail.net, 
+Borrowed items: The Lion, the Witch and the Wardrobe - C.S. Lewis, 
+----------------------------
+Name:  Ria Barker, 
+Email: riabarker@outlook.ca, 
+Borrowed items: The Call of the Wild - Jack London, 
+----------------------------
+Name:  Matthew Simmons, 
+Email: mattsimm@outlook.ca, 
+Borrowed items: Origins - Imagine Dragons, 
+----------------------------
+Name:  Laura Frederick, 
+Email: laurafrederick@icloud.org, 
+Borrowed items: The Call of the Wild - Jack London]
+2023-05-09 23:22:42.946 INFO LibrarySystem 110 getItemsNotAvailable - [
+Title: The Call of the Wild
+Author: Jack London
+ISBN: 9788838439018]
