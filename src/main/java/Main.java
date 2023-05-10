@@ -10,15 +10,16 @@ public class Main {
         // Instantiating LibrarySystem
         LibrarySystem librarySystem = new LibrarySystem("Uptown Library",
                 "425-778-21-48", "www.uptown-library.org");
+        UserSystem usersSystem = new UserSystem();
 
         // Creating users
         UserFileReader reader = new UserFileReader(UserFileReader.userdata);
         UserFileReader.createUsers(5);
-        User user1 = LibrarySystem.users.get(0);
-        User user2 = LibrarySystem.users.get(1);
-        User user3 = LibrarySystem.users.get(2);
-        User user4 = LibrarySystem.users.get(3);
-        User user5 = LibrarySystem.users.get(4);
+        User user1 = usersSystem.users.get(0);
+        User user2 = usersSystem.users.get(1);
+        User user3 = usersSystem.users.get(2);
+        User user4 = usersSystem.users.get(3);
+        User user5 = usersSystem.users.get(4);
 
         // Creating library items
         Book book1 = new Book(1, "book","To the Lighthouse",
@@ -70,16 +71,16 @@ public class Main {
         user1.printUserInfo();
 
         // Printing out all library users
-        librarySystem.printAllUsersNames();
-        librarySystem.printTotalNumberOfUsers();
+        usersSystem.printAllUsersNames();
+        usersSystem.printTotalNumberOfUsers();
 
         // Searching for an item by the author and title (case-insensitive)
-        librarySystem.findItemByAuthor("London"); // Output: The Call of the Wild - Jack London
-        librarySystem.findItemByTitle("snow"); //
-
+        SearchService searchService = new SearchService();
+        searchService.findItemByAuthor("London"); // Output: The Call of the Wild - Jack London
+        searchService.findItemByTitle("snow"); //
 
         // Printing the number of times each book was checked out
-        LibrarySystem.printBookCheckouts();
+        BookCheckOutStatus.printBookCheckouts();
 
         // Instantiating MediaCenter
         MediaCenter mediaCenter = new MediaCenter();
@@ -119,10 +120,10 @@ public class Main {
         user5.printItemsOnHold();
 
         // Printing items in the hold queue
-        librarySystem.printQueueItems();
+        HoldItem.printQueueItems();
 
         // Printing total number of books checked out from the library
-        logger.info("Total books checkouts: " + LibrarySystem.totalBooksCheckout);
+        logger.info("Total books checkouts: " + BookCheckOutStatus.totalBooksCheckout);
 
         // Printing total number of items checked out from the library
         logger.info("Total items checkouts: " + LibrarySystem.totalItemsCheckout);
@@ -131,11 +132,12 @@ public class Main {
         // Output: "There are 21 unique words in the text"
         getUniqueWords("my-app/src/main/resources/libraryPromo.txt");
 
-        // Testing methods created with custom lambda functions
-        librarySystem.printStudentUsers();
-        librarySystem.getBorrowedItemsNumber();
-        librarySystem.findItemByTitleAndAuthor("wild", "London");
-        librarySystem.getUsersWithBorrowedItems();
+        // Testing methods that use custom lambda functions
+        usersSystem.getStudentUsers();
+        usersSystem.getBorrowedItemsNumber();
+        usersSystem.getUsersWithBorrowedItems();
         librarySystem.getItemsNotAvailable();
+
+        searchService.findItemByTitleAndAuthor("wild", "London");
     }
 }

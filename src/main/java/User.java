@@ -31,7 +31,7 @@ public class User implements Formattable {
         borrowedItems = new ArrayList<>();
         itemsOnHold = new ArrayList<>();
         checkedOutItems = new ArrayList<>();
-        LibrarySystem.addUser(this);
+        UserSystem.addUser(this);
     }
 
     // Getter and Setters

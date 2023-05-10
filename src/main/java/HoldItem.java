@@ -1,12 +1,14 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class HoldItem <T> {
-
 	private LibraryItem item;
 	private User user;
 	private LocalDateTime date;
+
 
 	public HoldItem(LibraryItem item, User user, LocalDateTime date) {
 		this.item = item;
@@ -20,6 +22,32 @@ public class HoldItem <T> {
 
 	public User getUser() {
 		return user;
+	}
+
+	/** This method adds items to the hold queue
+	 *
+	 * @param holdItem
+	 */
+	public static void addToHoldQueue(HoldItem holdItem) {
+		LibrarySystem.holdQueue.add(holdItem);
+	}
+
+	/** This method removes item from the hold queue
+	 * @param holdItem
+	 */
+	public void removeFromHoldQueue(HoldItem holdItem) {
+		LibrarySystem.holdQueue.remove(holdItem);
+	}
+
+
+	/**
+	 * This method prints the items in the hold queue
+	 */
+	public static void printQueueItems() {
+		Logger logger = LogManager.getLogger(LibrarySystem.class);
+		for (HoldItem holdItem : LibrarySystem.holdQueue) {
+			logger.info(holdItem.toString());
+		}
 	}
 	@Override
 	public String toString() {

@@ -155,7 +155,7 @@ abstract class LibraryItem {
     }
 
     /**
-     * This method provides book return functionality
+     * This method provides item return functionality
      */
     public void returnItem(User user) {
         setNumberOfItemsAvailable(numberOfItemsAvailable += 1);
@@ -176,7 +176,7 @@ abstract class LibraryItem {
             addToHoldItems(user);
             LocalDateTime currentDate = LocalDateTime.now();
             HoldItem holdItem = new HoldItem<>(this, user, currentDate);
-            LibrarySystem.addToHoldQueue(holdItem);
+            HoldItem.addToHoldQueue(holdItem);
             logger.info("You successfully placed  a hold on the item " + this);
         } else {
             logger.warn("This item is available");
@@ -218,5 +218,14 @@ abstract class LibraryItem {
      */
     public void printItemJSON() {
         logger.info(formatJSON());
+    }
+
+
+    /**
+     * This method prints the item's info.
+     */
+    public static void printItemInfo(LibraryItem item) {
+        Logger logger = LogManager.getLogger(LibrarySystem.class);
+        logger.info(item.toString());
     }
 }

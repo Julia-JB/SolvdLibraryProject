@@ -87,7 +87,7 @@
          * This method calls book checkout counting method from LibrarySystem Class
          */
         public void updateCheckoutCounter() {
-            LibrarySystem.countBookCheckouts(this);
+            BookCheckOutStatus.countBookCheckouts(this);
         }
 
         /**
