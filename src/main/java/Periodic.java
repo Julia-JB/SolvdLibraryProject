@@ -7,7 +7,7 @@ public class Periodic extends LibraryItem {
 
 
     // Constructor
-    public Periodic(int id, String itemType, String title, double price, Frequency frequency,
+    public Periodic(int id, ItemType itemType, String title, double price, Frequency frequency,
                     int year, int number) {
         super(id, itemType, title, price);
         this.year = year;
@@ -62,7 +62,7 @@ public class Periodic extends LibraryItem {
     public String formatJSON() {
         String jsonString = String.format("{\n \"id\": %d, \n \"type\": \"%s\", " +
                         "\n \"title\": \"%s\", \n \"year\": \"%d\", \n \"number\": %d \n}",
-                getId(), getItemType(), getTitle(), year, number);
+                getId(), getItemType().getDisplayName(), getTitle(), year, number);
         return jsonString;
     }
 }

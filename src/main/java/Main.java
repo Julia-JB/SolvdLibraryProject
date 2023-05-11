@@ -22,22 +22,22 @@ public class Main {
         User user5 = usersSystem.users.get(4);
 
         // Creating library items
-        Book book1 = new Book(1, "book","To the Lighthouse",
+        Book book1 = new Book(1, ItemType.BOOK,"To the Lighthouse",
                 "Virginia Woolf", 14.50, true, 3,
                 BookGenre.ROMANCE, "8365781899458", 209);
 
-        Book book2 = new Book(2, "book",  "The Call of the Wild",
+        Book book2 = new Book(2, ItemType.BOOK,  "The Call of the Wild",
                 "Jack London", 12.80, true, 2,
                 BookGenre.FICTION, "9788838439018", 46);
 
-        ChildrensBook childrensBook3 = new ChildrensBook(1, "children's book",
+        ChildrensBook childrensBook3 = new ChildrensBook(1, ItemType.BOOK,
                 "The Lion, the Witch and the Wardrobe", "C.S. Lewis", 17.10,
                 true, 2, BookGenre.CHILDRENS_CHAPTER_BOOK,
                 "9780064404990", 208, AgeGroup.ELEMENTARY_TO_MIDDLE);
 
-        CD cd1 = new CD(1, "cd", "Origins", "Imagine Dragons", 12.99,
+        CD cd1 = new CD(1, ItemType.CD, "Origins", "Imagine Dragons", 12.99,
                 true, 2, "40:02");
-        Periodic magazine1 = new Periodic(1, "magazine", "The New-Yorker", 5, Frequency.WEEKLY,
+        Periodic magazine1 = new Periodic(1, ItemType.MAGAZINE, "The New-Yorker", 5, Frequency.WEEKLY,
                 2022, 12);
 
 

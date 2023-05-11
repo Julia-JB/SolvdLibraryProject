@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 abstract class LibraryItem {
     // Fields
     private int id;
-    public String itemType;
+    public ItemType itemType;
     private String title;
     private String author;
     private double price;
@@ -23,7 +23,8 @@ abstract class LibraryItem {
     public LibraryItem() {
     }
 
-    public LibraryItem(int id, String itemType, String title, String author, double price, boolean available,
+    public LibraryItem(int id, ItemType itemType, String title, String author, double price,
+                       boolean available,
                        int numberOfItemsAvailable) {
         this.id = id;
         this.itemType = itemType;
@@ -35,7 +36,7 @@ abstract class LibraryItem {
         LibrarySystem.addLibraryItem(this);
     }
 
-    public LibraryItem(int id, String itemType, String title, double price) {
+    public LibraryItem(int id, ItemType itemType, String title, double price) {
         this.id = id;
         this.itemType = itemType;
         this.title = title;
@@ -49,7 +50,7 @@ abstract class LibraryItem {
     public void setId(int id) {
         this.id = id;
     }
-    public String getItemType() {
+    public ItemType getItemType() {
         return itemType;
     }
 

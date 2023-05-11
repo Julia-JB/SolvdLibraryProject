@@ -55,7 +55,7 @@ public class HoldItem <T> {
 		sb.append("\n----------------------------");
 		sb.append("\nName: ").append(user.getName()).append(", \n");
 		sb.append("Email: ").append(user.getEmail()).append(", \n");
-		sb.append("Type: ").append(item.getItemType()).append(", \n");
+		sb.append("Type: ").append(item.getItemType().getDisplayName()).append(", \n");
 		sb.append("Title: ").append(item.getTitle()).append(", \n");
 		sb.append("Author: ").append(item.getAuthor()).append("\n");
 		sb.append("Date: ").append(date.format(formatter));

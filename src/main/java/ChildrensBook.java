@@ -4,7 +4,8 @@ public class ChildrensBook extends Book {
     private AgeGroup ageGroup;
 
     // Constructor
-    public ChildrensBook(int id, String itemType, String title, String author, double price, boolean available,
+    public ChildrensBook(int id, ItemType itemType, String title, String author, double price,
+                         boolean available,
                         int numberOfItemsAvailable, BookGenre genre, String ISBN, int pageCount,
                          AgeGroup ageGroup) {
         super(id, itemType, title, author, price, available, numberOfItemsAvailable, genre, ISBN, pageCount);

@@ -11,7 +11,7 @@
         Logger logger = LogManager.getLogger(LibrarySystem.class);
 
     // Constructor
-        public Book(int id, String itemType, String title, String author, double price, boolean
+        public Book(int id, ItemType itemType, String title, String author, double price, boolean
                 available, int numberOfItemsAvailable, BookGenre genre, String isbn,
                     int pageCount) {
 
@@ -117,7 +117,8 @@
             String jsonString = String.format("{\n \"id\": %d, \n \"type\": \"%s\", " +
                             "\n \"title\": \"%s\", \n \"author\": \"%s\" \n \"genre\": \"%s\"," +
                             "\n \"isbn\": \"%s\", \n \"available\": %b, \n \"itemsAvailable\": %d \n}",
-                    getId(), getItemType(), getTitle(), getAuthor(), getGenre(), isbn, isAvailable(),
+                    getId(), getItemType().getDisplayName(), getTitle(), getAuthor(), getGenre(), isbn,
+                    isAvailable(),
                     getNumberOfItemsAvailable());
             return jsonString;
         }
