@@ -63,7 +63,8 @@ public class Main {
         logger.info(book2.isAvailable());
 
         // Printing a receipt upon the checkout
-        user1.printReceipt();
+        ReceiptFormatter formatter = new ReceiptFormatter();
+        logger.info(formatter.formatReceipt(user1));
 
         // Returning the item
         book1.returnItem(user1);
@@ -122,14 +123,20 @@ public class Main {
         user1.printItemsBorrowedByUser();
         user5.printItemsOnHold();
 
-        // Printing items in the hold queue
-        HoldItem.printQueueItems();
-
         // Printing total number of books checked out from the library
         logger.info("Total books checkouts: " + BookCheckOutStatus.totalBooksCheckout);
 
         // Printing total number of items checked out from the library
         logger.info("Total items checkouts: " + LibrarySystem.totalItemsCheckout);
+
+        // Printing items in the hold queue
+        HoldItem.printQueueItems();
+
+        // Working with HashMap
+        librarySystem.updateBorrowedItemsMap(user1);
+        librarySystem.updateBorrowedItemsMap(user2);
+        librarySystem.updateBorrowedItemsMap(user3);
+        logger.info(LibrarySystem.usersBorrowedItemsMap);
 
         // Printing the number of unique words to file
         // Output: "There are 21 unique words in the text"
@@ -137,17 +144,11 @@ public class Main {
 
         // Testing methods that use custom lambda functions
         usersSystem.getStudentUsers();
-        usersSystem.getBorrowedItemsNumber();
         usersSystem.getUsersWithBorrowedItems();
         librarySystem.getItemsNotAvailable();
-
+        logger.info(librarySystem.getBooksBasicInfo());
         searchService.findItemByTitleAndAuthor("wild", "London");
-
-        librarySystem.updateBorrowedItemsMap(user1);
-        librarySystem.updateBorrowedItemsMap(user2);
-        librarySystem.updateBorrowedItemsMap(user3);
-
-        logger.info(LibrarySystem.usersBorrowedItemsMap);
         logger.info(usersSystem.getUsersWithOverdueItems());
+
     }
 }

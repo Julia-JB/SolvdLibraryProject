@@ -18,7 +18,7 @@ public class User implements Formattable {
     private List<LibraryItem> borrowedItems;
     private List<LibraryItem> checkedOutItems;
     private List<LibraryItem> itemsOnHold;
-    private double totalPriceCheckedItems = 0;
+
     Logger logger = LogManager.getLogger(LibrarySystem.class);
 
     //Constructor
@@ -87,15 +87,6 @@ public class User implements Formattable {
     }
 
     // Methods
-    /**
-     * This method prints the due date for returning the item.
-     * The date is calculated based on the 21-day return period starting today (given that book is checked out today)
-     */
-    public void printReturnDateForItem(LibraryItem item) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
-        String formattedDate = item.getReturnDate().format(formatter);
-        logger.info("Please return the " + item.getItemType() + " \"" + item.getTitle() + "\" by " + formattedDate);
-    }
     public void printItemsBorrowedByUser() {
         logger.info("User " + this.getName() + "has borrowed the items: " + borrowedItems.toString());
     }
@@ -153,45 +144,6 @@ public class User implements Formattable {
         logger.info(formatJSON());
     }
 
-    public double calculateCheckedOutItemsCost() {
-        for (LibraryItem item : checkedOutItems) {
-            totalPriceCheckedItems += item.getPrice();
-        }
-        return totalPriceCheckedItems;
-    }
-
-    /**
-     * This method formats a receipt upon the user's checkout
-     */
-    public String formatReceipt() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
-        calculateCheckedOutItemsCost();
-        StringBuilder sb = new StringBuilder();
-        sb.append("\n----------------------------");
-        sb.append("\nCheck Out Receipt");
-        sb.append("\n" + LibrarySystem.libraryName);
-        sb.append("\n" + LibrarySystem.libraryPhoneNumber);
-        sb.append("\n" + LibrarySystem.libraryWebsite);
-        sb.append("\n" + LocalDate.now().format(formatter));
-        for (LibraryItem item : checkedOutItems) {
-            sb.append("\nTitle: ").append(item.getTitle());
-        }
-        sb.append("\nDue: ").append(checkedOutItems.get(0).getReturnDate().format(formatter));
-        sb.append("\nTotal items: ").append(checkedOutItems.size());
-
-        sb.append("\nYou just saved " +
-                NumberFormat.getCurrencyInstance(Locale.US).format(totalPriceCheckedItems)+
-                " by using your library. " +
-                "\nThis is suggested retail price of the item(s) checked out.");
-        return sb.toString();
-    }
-
-    /**
-     * This method prints the receipt upon the user's checkout
-     */
-    public void printReceipt() {
-        logger.info(formatReceipt());
-    }
 
     /**
      * This method overrides equals() method to compare User objects based on their names

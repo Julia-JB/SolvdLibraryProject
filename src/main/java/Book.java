@@ -1,3 +1,4 @@
+    import java.util.Map;
     import java.util.Objects;
     import org.apache.logging.log4j.LogManager;
     import org.apache.logging.log4j.Logger;
@@ -18,6 +19,8 @@
             this.isbn = isbn;
             this.pageCount = pageCount;
             this.genre = genre;
+
+            LibrarySystem.books.add(this);
         }
 
         public Book(){}
@@ -102,6 +105,8 @@
                 logger.warn("This item is not available");
             }
         }
+
+
 
         /**
          * This method implements abstract method from LibraryItem class and

@@ -10,7 +10,8 @@ public class LibrarySystem {
     public static int totalNumberOfLibraryItems;
     public static int totalItemsCheckout;
 
-    protected static List<LibraryItem> items = new ArrayList<>();
+    public static List<LibraryItem> items = new ArrayList<>();
+    public static List<Book> books = new ArrayList<>();
     public static Queue<HoldItem> holdQueue = new LinkedList<>();
     public static Map<Integer, List<LibraryItem>> usersBorrowedItemsMap = new HashMap<>();
 
@@ -23,6 +24,7 @@ public class LibrarySystem {
         LibrarySystem.libraryWebsite = libraryWebsite;
         LibrarySystem.holdQueue = holdQueue;
     }
+
 
     // Methods
     /**
@@ -67,7 +69,10 @@ public class LibrarySystem {
         return itemsNotAvailable;
     }
 
-
+    public List<String> getBooksBasicInfo() {
+        List<String> bookStrings = MapStringLambda.mapItemsToStrings(books, MapStringLambda.bookTitleAuthor);
+        return bookStrings;
+    }
 }
 
 
