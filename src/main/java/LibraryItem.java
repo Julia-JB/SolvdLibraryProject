@@ -36,6 +36,10 @@ abstract class LibraryItem {
     }
 
     public LibraryItem(int id, String itemType, String title, double price) {
+        this.id = id;
+        this.itemType = itemType;
+        this.title = title;
+        this.price = price;
     }
 
     // Getters and Setters

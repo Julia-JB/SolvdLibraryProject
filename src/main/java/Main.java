@@ -35,7 +35,11 @@ public class Main {
                 true, 2, BookGenre.CHILDRENS_CHAPTER_BOOK,
                 "9780064404990", 208, AgeGroup.ELEMENTARY_TO_MIDDLE);
 
-        CD cd1 = new CD(1, "cd", "Origins", "Imagine Dragons", 12.99, true, 2, "40:02");
+        CD cd1 = new CD(1, "cd", "Origins", "Imagine Dragons", 12.99,
+                true, 2, "40:02");
+        Periodic magazine1 = new Periodic(1, "magazine", "The New-Yorker", 5, Frequency.WEEKLY,
+                2022, 12);
+
 
         // ISBN validation is implemented on setting an ISBN
         book1.setISBN("9780306406157"); // ISBN is valid
@@ -149,7 +153,8 @@ public class Main {
         searchService.findItemByTitleAndAuthor("wild", "London");
         logger.info(usersSystem.getUsersWithOverdueItems());
 
-        // Testing method that uses enums
+        // Testing method that uses enum methods
         childrensBook3.checkAgeGroup(14); // This book is suitable for the user's age.
+        logger.info(magazine1.getFrequency().getIssuesPerYear());
     }
 }
