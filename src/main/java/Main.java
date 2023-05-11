@@ -30,10 +30,10 @@ public class Main {
                 "Jack London", 12.80, true, 2,
                 BookGenre.FICTION, "9788838439018", 46);
 
-        ChildrenBook book3 = new ChildrenBook(1, "children's book",
+        ChildrensBook childrensBook3 = new ChildrensBook(1, "children's book",
                 "The Lion, the Witch and the Wardrobe", "C.S. Lewis", 17.10,
                 true, 2, BookGenre.CHILDRENS_CHAPTER_BOOK,
-                "9780064404990", 208, "grades: 5-8");
+                "9780064404990", 208, AgeGroup.ELEMENTARY_TO_MIDDLE);
 
         CD cd1 = new CD(1, "cd", "Origins", "Imagine Dragons", 12.99, true, 2, "40:02");
 
@@ -56,7 +56,6 @@ public class Main {
         book1.checkoutBook(user1);
         book2.checkoutBook(user2);
         book2.checkoutBook(user4);
-        book3.checkoutBook(user1);
         cd1.checkoutItem(user3);
 
         logger.info("Here " + book2.getNumberOfItemsAvailable());
@@ -150,5 +149,7 @@ public class Main {
         searchService.findItemByTitleAndAuthor("wild", "London");
         logger.info(usersSystem.getUsersWithOverdueItems());
 
+        // Testing method that uses enums
+        childrensBook3.checkAgeGroup(14); // This book is suitable for the user's age.
     }
 }

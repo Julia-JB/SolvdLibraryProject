@@ -5,5 +5,6 @@ public enum BookGenre {
         ROMANCE,
         SCIENCE_FICTION,
         CHILDRENS_PICTURE_BOOK,
-        CHILDRENS_CHAPTER_BOOK
+        CHILDRENS_CHAPTER_BOOK,
+        CHILDRENS_NOVEL;
 }

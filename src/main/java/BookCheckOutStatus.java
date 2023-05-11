@@ -27,10 +27,8 @@ public class BookCheckOutStatus {
 	 * This method prints the total number of times each book was checked out.
 	 */
 	public static void printBookCheckouts() {
-		// instantiating logger as the method is static
 		Logger logger = LogManager.getLogger(LibrarySystem.class);
 		logger.info("Number of book's checkouts by ISBN");
 		bookCounts.forEach((key, value) -> logger.info("ISBN " + key + ": " + value));
 	}
-
 }
