@@ -1,6 +1,7 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class LibrarySystem {
     // Fields
@@ -72,6 +73,13 @@ public class LibrarySystem {
     public List<String> getBooksBasicInfo() {
         List<String> bookStrings = MapStringLambda.mapItemsToStrings(books, MapStringLambda.bookTitleAuthor);
         return bookStrings;
+    }
+
+    public List<Book> getChildrenChapterBooks() {
+        List<Book> chapterBooks = books.stream()
+                .filter(item -> item.getGenre() == BookGenre.CHILDRENS_CHAPTER_BOOK)
+                .collect(Collectors.toList());
+        return chapterBooks;
     }
 }
 

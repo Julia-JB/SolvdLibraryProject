@@ -156,5 +156,6 @@ public class Main {
         // Testing enum methods
         childrensBook3.checkAgeGroup(14); // This book is suitable for the user's age.
         logger.info(magazine1.getFrequency().getIssuesPerYear());
+        logger.info(librarySystem.getChildrenChapterBooks());
     }
 }
