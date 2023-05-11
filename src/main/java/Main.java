@@ -153,7 +153,7 @@ public class Main {
         searchService.findItemByTitleAndAuthor("wild", "London");
         logger.info(usersSystem.getUsersWithOverdueItems());
 
-        // Testing method that uses enum methods
+        // Testing enum methods
         childrensBook3.checkAgeGroup(14); // This book is suitable for the user's age.
         logger.info(magazine1.getFrequency().getIssuesPerYear());
     }
