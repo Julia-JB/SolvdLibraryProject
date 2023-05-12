@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class UserSystem implements Printable {
 	public static int totalNumberOfUsers;
@@ -40,13 +41,16 @@ public class UserSystem implements Printable {
 	}
 
 	/**
-	 * This method displays all users that currently have items borrowed
+	 * This method displays all users with items borrowed
 	 * @return
 	 */
-	public List<User> getUsersWithBorrowedItems() {
-		List<User> usersWithBorrowedItems = FilterLambda.filter(users, FilterLambda.hasBorrowedItems);
-		logger.info(usersWithBorrowedItems);
-		return usersWithBorrowedItems;
+	public List<String> getUsersWithBorrowedItems() {
+		List<String> usersAndItems = users.stream()
+				.filter(user -> user.getBorrowedItems().size() > 0)
+				.map(user -> user.getName() + user.getBorrowedItems())
+				.collect(Collectors.toList());
+
+		return usersAndItems;
 	}
 
 	public HashMap<User, List<LibraryItem>> getUsersWithOverdueItems() {
@@ -71,8 +75,6 @@ public class UserSystem implements Printable {
 		}
 		return usersWithOverdueItems;
 	}
-
-
 
 
 	/**

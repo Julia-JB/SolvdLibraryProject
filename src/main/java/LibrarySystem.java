@@ -81,6 +81,14 @@ public class LibrarySystem {
                 .collect(Collectors.toList());
         return chapterBooks;
     }
+
+    public List<Book> sortBooksByTitle() {
+        List<Book> sortedBooks = books.stream()
+                .sorted(Comparator.comparing(Book::getTitle))
+                .collect(Collectors.toList());
+
+        return sortedBooks;
+    }
 }
 
 

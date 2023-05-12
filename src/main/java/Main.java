@@ -157,5 +157,9 @@ public class Main {
         childrensBook3.checkAgeGroup(14); // This book is suitable for the user's age.
         logger.info(magazine1.getFrequency().getIssuesPerYear());
         logger.info(librarySystem.getChildrenChapterBooks());
+
+        // Testing methods with streams
+        logger.info(librarySystem.sortBooksByTitle());
+        logger.info(usersSystem.getUsersWithBorrowedItems());
     }
 }
