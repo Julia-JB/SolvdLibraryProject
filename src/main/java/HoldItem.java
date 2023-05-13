@@ -48,6 +48,12 @@ public class HoldItem <T> {
 			logger.info(holdItem.toString());
 		}
 	}
+
+	/**
+	 * This method overrides toString() method and displays the info of an item on hold,
+	 * including user's and item's details as well as exact time of placing a hold.
+	 * @return
+	 */
 	@Override
 	public String toString() {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

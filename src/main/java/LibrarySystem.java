@@ -61,7 +61,7 @@ public class LibrarySystem {
 
     /**
      * This method displays items that are currently unavailable in the library
-     * @return
+     * @return List<LibraryItem>
      */
     public List<LibraryItem> getItemsNotAvailable() {
         List<LibraryItem> itemsNotAvailable = FilterLambda.filter(items, FilterLambda.itemNotAvailable);
@@ -70,18 +70,33 @@ public class LibrarySystem {
         return itemsNotAvailable;
     }
 
+    /**
+     * This method displays basic book details. Practicing lambda expressions.
+     * @return List<String>
+     */
     public List<String> getBooksBasicInfo() {
-        List<String> bookStrings = MapStringLambda.mapItemsToStrings(books, MapStringLambda.bookTitleAuthor);
+        List<String> bookStrings = MapStringLambda.mapItemsToStrings(books,
+                MapStringLambda.bookTitleAuthor);
+
         return bookStrings;
     }
 
+    /**
+     * This method retrieves only children chapter books. Enums and streams practice
+     * @return List<Book>
+     */
     public List<Book> getChildrenChapterBooks() {
         List<Book> chapterBooks = books.stream()
                 .filter(item -> item.getGenre() == BookGenre.CHILDRENS_CHAPTER_BOOK)
                 .collect(Collectors.toList());
+
         return chapterBooks;
     }
 
+    /**
+     * This method sorts books by title. Streams practice
+     * @return List</Book>
+     */
     public List<Book> sortBooksByTitle() {
         List<Book> sortedBooks = books.stream()
                 .sorted(Comparator.comparing(Book::getTitle))

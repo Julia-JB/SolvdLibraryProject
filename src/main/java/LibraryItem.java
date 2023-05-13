@@ -3,7 +3,6 @@ import org.apache.logging.log4j.Logger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-
 abstract class LibraryItem {
     // Fields
     private int id;
@@ -20,9 +19,6 @@ abstract class LibraryItem {
     Logger logger = LogManager.getLogger(LibraryItem.class);
 
     // Constructor
-    public LibraryItem() {
-    }
-
     public LibraryItem(int id, ItemType itemType, String title, String author, double price,
                        boolean available,
                        int numberOfItemsAvailable) {
@@ -47,9 +43,11 @@ abstract class LibraryItem {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public ItemType getItemType() {
         return itemType;
     }
@@ -97,6 +95,7 @@ abstract class LibraryItem {
     public void setNumberOfItemsAvailable(int numberOfItemsAvailable) {
         this.numberOfItemsAvailable = numberOfItemsAvailable;
     }
+
     public void setReturnDate() {
         LocalDate today = LocalDate.now();
         this.returnDate = today.plusDays(MAX_DAYS_LOAN);
@@ -143,6 +142,7 @@ abstract class LibraryItem {
             if (numberOfItemsAvailable == 0) {
                 available = false;
             }
+
         } catch (NoAvailableItemsException e) {
            logger.warn(e.getMessage(), e);
         }
@@ -186,7 +186,7 @@ abstract class LibraryItem {
     }
 
     /**
-     * This method adds an items to the list of items the user put on hold
+     * This method adds an items to the list of items the user has put on hold
      * @param user
      */
     public void addToHoldItems(User user) {
@@ -221,7 +221,6 @@ abstract class LibraryItem {
     public void printItemJSON() {
         logger.info(formatJSON());
     }
-
 
     /**
      * This method prints the item's info.

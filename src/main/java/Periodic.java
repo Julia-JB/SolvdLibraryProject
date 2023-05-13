@@ -1,6 +1,5 @@
 public class Periodic extends LibraryItem {
     // Fields
-
     private int year;
     private int number;
     private Frequency frequency;
@@ -16,8 +15,6 @@ public class Periodic extends LibraryItem {
     }
 
     // Getters and Setters
-
-
     public int getYear() {
         return year;
     }
@@ -54,6 +51,7 @@ public class Periodic extends LibraryItem {
                         "Frequency: %s\n",
                 getTitle(), year, number, frequency.getDisplayName());
     }
+
     /**
      * This method implements abstract method from LibraryItem class and
      * formats book info as JSON literal
@@ -63,6 +61,7 @@ public class Periodic extends LibraryItem {
         String jsonString = String.format("{\n \"id\": %d, \n \"type\": \"%s\", " +
                         "\n \"title\": \"%s\", \n \"year\": \"%d\", \n \"number\": %d \n}",
                 getId(), getItemType().getDisplayName(), getTitle(), year, number);
+        
         return jsonString;
     }
 }

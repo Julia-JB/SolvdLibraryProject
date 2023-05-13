@@ -8,6 +8,8 @@ public final class MediaCenter implements UsageCostCalculator {
     static float copyPrice;
     static float scanPrice;
     static byte studentDiscountPercent;
+
+    // Static block assigns values to the fields
     static {
         copyPrice = 0.2f;
         scanPrice = 0.4f;
@@ -45,8 +47,7 @@ public final class MediaCenter implements UsageCostCalculator {
         studentDiscountPercent = studentDiscountPercent;
     }
 
-    // Method for cost calculation is provided in UsageCostCalculator interface
-
+    // Method for cost calculation is provided in UsageCostCalculator interface as a default method
     /**
      * This method prints out the formatted cost of media center usage (copier and scanner).
      * @param user

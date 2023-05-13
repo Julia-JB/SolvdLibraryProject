@@ -64,11 +64,19 @@ public class Event {
         eventList.add(eventList, user);
     }
 
+    /**
+     * This method displays event attendees
+     */
     public void printEventAttendees() {
         Logger logger = LogManager.getLogger(LibrarySystem.class);
         logger.info("Event attendees are:");
         eventList.printCustomList(eventList);
     }
+
+    /**
+     * This method removes an attendee from the list
+     * @param user
+     */
 
     public void removeEventAttendee(User user) {
         eventList.remove(eventList, user);

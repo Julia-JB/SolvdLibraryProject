@@ -10,6 +10,7 @@ public class MapStringLambda {
 			String mappedString = mapFunction.apply(item);
 			mappedStrings.add(mappedString);
 		}
+
 		return mappedStrings;
 	}
 

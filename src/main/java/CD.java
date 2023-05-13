@@ -43,8 +43,4 @@ public class CD extends LibraryItem {
                 getNumberOfItemsAvailable());
         return jsonString;
     }
-
-    public void checkoutCD(User user) {
-        checkoutItem(user);
-    }
 }

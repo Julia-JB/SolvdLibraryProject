@@ -76,6 +76,7 @@ public class Employee implements WagesCalculator {
         String formattedWage = NumberFormat.getCurrencyInstance(Locale.US).format(calculateWages(hoursWorked));
         System.out.println("The wage is " + formattedWage);
     }
+
     /**
      * Method overloading
      * This method prints out librarian wages with overtime work

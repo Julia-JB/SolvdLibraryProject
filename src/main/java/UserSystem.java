@@ -53,29 +53,30 @@ public class UserSystem implements Printable {
 		return usersAndItems;
 	}
 
+	/**
+	 * This method gets users with overdue items
+	 * @return
+	 */
 	public HashMap<User, List<LibraryItem>> getUsersWithOverdueItems() {
 		HashMap<User, List<LibraryItem>> usersWithOverdueItems = new HashMap<>();
+		List<LibraryItem> overdueItems = new ArrayList<>();
 		for (User user : users) {
-			List<LibraryItem> overdueItems = new ArrayList<>();
-
 			if (user.getBorrowedItems().size() != 0) {
-				for (LibraryItem item : user.getBorrowedItems()) {
-					if (LocalDate.now().isAfter(item.getReturnDate())) {
-						overdueItems.add(item);
+				 overdueItems = user.getBorrowedItems().stream()
+						.filter(item -> LocalDate.now().isAfter(item.getReturnDate()))
+						.collect(Collectors.toList());
 					}
-				}
-
-				if (!overdueItems.isEmpty()) {
-					usersWithOverdueItems.put(user, overdueItems);
-				}
+			if (!overdueItems.isEmpty()) {
+				usersWithOverdueItems.put(user, overdueItems);
 			}
 		}
+
 		if (usersWithOverdueItems.size() == 0) {
 			logger.info("No users with overdue items");
 		}
+
 		return usersWithOverdueItems;
 	}
-
 
 	/**
 	 * This method displays a list of student users.
@@ -95,6 +96,7 @@ public class UserSystem implements Printable {
 		users.forEach(user -> userNames.add(user.getName()));
 		logger.info("The users of the library are: " + userNames);
 	}
+
 	/**
 	 * This method prints total number of library users
 	 */
