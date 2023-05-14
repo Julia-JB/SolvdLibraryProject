@@ -83,7 +83,7 @@ public class User implements Formattable {
     }
 
     public List<LibraryItem> getCheckedOutItems() {
-        return checkedOutItems;
+            return checkedOutItems;
     }
 
     // Methods
