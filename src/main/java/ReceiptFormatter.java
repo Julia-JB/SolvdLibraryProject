@@ -6,10 +6,9 @@ import java.util.Locale;
 public class ReceiptFormatter {
 	private double totalPriceCheckedItems = 0;
 		public double calculateCheckedOutItemsCost(User user) {
-			for (LibraryItem item : user.getCheckedOutItems()){
-				totalPriceCheckedItems += item.getPrice();
-			}
-			return totalPriceCheckedItems;
+			return totalPriceCheckedItems = user.getCheckedOutItems().stream()
+					.mapToDouble(LibraryItem::getPrice)
+					.sum();
 		}
 
 	public String formatReceipt(User user) {

@@ -23,8 +23,6 @@
             LibrarySystem.books.add(this);
         }
 
-        public Book(){}
-
     // Getters and Setters
         public BookGenre getGenre() {
             return genre;
@@ -73,7 +71,6 @@
                 if (Integer.parseInt(String.valueOf(isbn.charAt(12))) != checkDigit) {
                     throw new InvalidISBNException("ISBN is not valid");
                 }
-
             } catch (NumberFormatException e) {
                 throw new InvalidISBNFormatException("ISBN should contain only digits");
             }
@@ -106,6 +103,8 @@
                 logger.warn("This item is not available");
             }
         }
+
+
 
         /**
          * This method implements abstract method from LibraryItem class and
