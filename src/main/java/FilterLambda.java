@@ -4,15 +4,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class FilterLambda {
 	public static <T> List<T> filter(List<T> items, Predicate<T> predicate) {
-		List<T> filteredItems = new ArrayList<>();
-		for (T item : items) {
-			if (predicate.test(item)) {
-				filteredItems.add(item);
-			}
-		}
+		List<T> filteredItems = items.stream()
+				.filter(predicate)
+				.collect(Collectors.toList());
 		return filteredItems;
 	}
 	public static Predicate<User> studentUser = user -> user.isStudent();

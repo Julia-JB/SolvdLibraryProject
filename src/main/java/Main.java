@@ -1,10 +1,15 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.lang.reflect.*;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
+
 import static uniqueWords.UniqueWords.getUniqueWords;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Logger logger = LogManager.getLogger(Main.class);
 
         // Instantiating LibrarySystem
@@ -161,5 +166,48 @@ public class Main {
         // Testing methods with streams
         logger.info(librarySystem.sortBooksByTitle());
         logger.info(usersSystem.getUsersWithBorrowedItems());
+
+
+        // Reflection practice
+
+        // Creating an object and invoking the method using Reflection
+        Class<?> mediaCenterReflection = Class.forName("MediaCenter");
+        Method methodReflection = mediaCenterReflection.getMethod("printUsageCost", User.class,
+                int.class, int.class);
+        Object objectReflection = mediaCenterReflection.newInstance();
+        methodReflection.invoke(objectReflection, user3, 2, 4);
+
+        // Logging details about fields
+        logger.info("Fields: ");
+        Field[] fields = mediaCenterReflection.getDeclaredFields();
+        Arrays.asList(fields)
+                .stream()
+                .forEach(field -> {
+                    logger.info("Name: " + field.getName());
+                    logger.info("Type: " + field.getType().getSimpleName());
+                    logger.info("Access modifier: " + Modifier.toString(field.getModifiers()));
+                });
+
+        // Logging details about the constructor
+        logger.info("Constructor: ");
+        Constructor<?> constructor = mediaCenterReflection.getDeclaredConstructor();
+        logger.info("Name: " + constructor.getName());
+        logger.info("Access modifier: " + Modifier.toString(constructor.getModifiers()));
+
+        // Logging details about the methods
+        logger.info("Methods: ");
+        Method[] methods = mediaCenterReflection.getMethods();
+        Arrays.asList(methods).stream()
+                .forEach(method -> {
+                    logger.info("Method name: " + method.getName());
+                    logger.info("Return type: " + method.getReturnType().getSimpleName());
+                    logger.info("Access modifier: " + Modifier.toString(method.getModifiers()));
+                    Parameter[] parameters = method.getParameters();
+                    Arrays.asList(parameters).stream()
+                            .forEach(parameter -> {
+                                logger.info("Name: " + parameter.getName());
+                                logger.info("Parameter type: " + parameter.getType());
+                            });
+                });
     }
 }

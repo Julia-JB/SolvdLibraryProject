@@ -44,9 +44,8 @@ public class HoldItem <T> {
 	 */
 	public static void printQueueItems() {
 		Logger logger = LogManager.getLogger(LibrarySystem.class);
-		for (HoldItem holdItem : LibrarySystem.holdQueue) {
-			logger.info(holdItem.toString());
-		}
+		LibrarySystem.holdQueue.stream()
+				.forEach(holdItem -> logger.info(holdItem.toString()));
 	}
 
 	/**
