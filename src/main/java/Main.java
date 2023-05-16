@@ -166,7 +166,5 @@ public class Main {
         ReflectionPractice.invokeMethod();
         ReflectionPractice.getClassDetails();
 
-        // API Client testing
-        QuotesApiClient.getRandomQuote();
     }
 }

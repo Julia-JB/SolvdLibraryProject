@@ -6,12 +6,15 @@ import java.net.URL;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class QuotesApiClient {
 	public static void getRandomQuote() {
 		HttpURLConnection connection = null;
+		Logger logger = LogManager.getLogger();
 		try {
-			URL url = new URL("https://api.api-ninjas.com/v1/quotes?category=learning");
+			URL url = new URL("https://api.api-ninjas.com/v1/quotes?category=knowledge");
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 			connection.setRequestProperty("X-Api-Key", Keys.API_KEY.getKey());
@@ -22,7 +25,7 @@ public class QuotesApiClient {
 				JsonNode root = mapper.readTree(responseStream);
 				String quote = root.get(0).get("quote").asText();
 				String author = root.get(0).get("author").asText();
-				System.out.println("\"" + quote + "\" - " + author);
+				logger.info("\"" + quote + "\" - " + author);
 			}
 		} catch (MalformedURLException e) {
 				e.printStackTrace();

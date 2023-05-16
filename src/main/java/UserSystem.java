@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class UserSystem implements Printable {
 	public static int totalNumberOfUsers;
 	public static List<User> users = new ArrayList<>();
-	Logger logger = LogManager.getLogger(LibrarySystem.class);
+	Logger logger = LogManager.getLogger();
 
 	public UserSystem() {
 	}
