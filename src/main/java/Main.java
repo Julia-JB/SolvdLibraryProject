@@ -1,11 +1,6 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.lang.reflect.*;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
-
 import static uniqueWords.UniqueWords.getUniqueWords;
 
 public class Main {
