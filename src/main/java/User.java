@@ -95,9 +95,9 @@ public class User implements Formattable {
      */
     public void printItemsOnHold() {
         if (this.itemsOnHold.size() == 0) {
-            logger.info("User " + this.name + "has not placed a hold on any items");
+            logger.info("User " + this.name + " has not placed a hold on any items.");
         } else {
-            logger.info("User " + this.getName() + "placed a hold on the item: " + itemsOnHold.toString());
+            logger.info("User " + this.getName() + " placed a hold on the item: " + itemsOnHold.toString());
         }
     }
 

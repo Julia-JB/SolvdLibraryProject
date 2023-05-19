@@ -57,13 +57,13 @@ public class UserSystem implements Printable {
 	 * This method gets users with overdue items
 	 * @return
 	 */
-	public HashMap<User, List<LibraryItem>> getUsersWithOverdueItems() {
+	public void getUsersWithOverdueItems() {
 		HashMap<User, List<LibraryItem>> usersWithOverdueItems = new HashMap<>();
 		List<LibraryItem> overdueItems = new ArrayList<>();
 		for (User user : users) {
 			if (user.getBorrowedItems().size() != 0) {
 				 overdueItems = user.getBorrowedItems().stream()
-						.filter(item -> LocalDate.now().isAfter(item.getReturnDate()))
+						.filter(item -> item.getReturnDate() != null && LocalDate.now().isAfter(item.getReturnDate()))
 						.collect(Collectors.toList());
 					}
 			if (!overdueItems.isEmpty()) {
@@ -73,9 +73,9 @@ public class UserSystem implements Printable {
 
 		if (usersWithOverdueItems.size() == 0) {
 			logger.info("No users with overdue items");
+		} else {
+			logger.info(usersWithOverdueItems);
 		}
-
-		return usersWithOverdueItems;
 	}
 
 	/**

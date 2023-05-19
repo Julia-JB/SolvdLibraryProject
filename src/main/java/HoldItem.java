@@ -39,14 +39,6 @@ public class HoldItem <T> {
 		LibrarySystem.holdQueue.remove(holdItem);
 	}
 
-	/**
-	 * This method prints the items in the hold queue
-	 */
-	public static void printQueueItems() {
-		Logger logger = LogManager.getLogger(LibrarySystem.class);
-		LibrarySystem.holdQueue.stream()
-				.forEach(holdItem -> logger.info(holdItem.toString()));
-	}
 
 	/**
 	 * This method overrides toString() method and displays the info of an item on hold,

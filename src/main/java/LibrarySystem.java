@@ -60,6 +60,34 @@ public class LibrarySystem {
     }
 
     /**
+     * This method prints the items in the hold queue
+     */
+    public static void printQueueItems() {
+        Logger logger = LogManager.getLogger(LibrarySystem.class);
+        holdQueue.stream()
+                .forEach(holdItem -> logger.info(holdItem.toString()));
+    }
+
+    public static void processReturnedItem(LibraryItem returnedItem){
+        HoldItem matchedHoldItem = null;
+        for (HoldItem holdItem : holdQueue) {
+            if (holdItem.getItem().equals(returnedItem)) {
+                matchedHoldItem = holdItem;
+            }
+        }
+
+        if (matchedHoldItem != null) {
+            notifyUserItemAvailable(matchedHoldItem);
+        }
+    }
+
+    private static void notifyUserItemAvailable(HoldItem holdItem) {
+        Logger logger = LogManager.getLogger();
+        logger.info("Item \"" + holdItem.getItem().getTitle() + "\" by " + holdItem.getItem().getAuthor()
+                + " is available for user " + holdItem.getUser().getName());
+    }
+
+    /**
      * This method displays items that are currently unavailable in the library
      * @return List<LibraryItem>
      */

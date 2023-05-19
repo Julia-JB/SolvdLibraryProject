@@ -164,6 +164,7 @@ abstract class LibraryItem {
         if (!available) {
             setAvailable(true);
         }
+        LibrarySystem.processReturnedItem(this);
         removeFromBorrowedItems(user);
         this.returnDate = null;
     }

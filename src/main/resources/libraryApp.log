@@ -1,10 +1,10 @@
-2023-05-18 22:15:24.165 WARN Book 48 setISBN - Please check the ISBN: ISBN is not valid
-2023-05-18 22:15:24.166 WARN Book 50 setISBN - An issue occurred
+2023-05-19 11:28:55.102 WARN Book 48 setISBN - Please check the ISBN: ISBN is not valid
+2023-05-19 11:28:55.105 WARN Book 50 setISBN - An issue occurred
 InvalidISBNFormatException: ISBN should contain only digits
 	at Book.checkISBN(Book.java:75) ~[classes/:?]
 	at Book.setISBN(Book.java:45) [classes/:?]
 	at Main.main(Main.java:55) [classes/:?]
-2023-05-18 22:15:24.174 INFO LibraryItem 222 printItemJSON - {
+2023-05-19 11:28:55.112 INFO LibraryItem 223 printItemJSON - {
  "id": 1, 
  "type": "Book", 
  "title": "To the Lighthouse", 
@@ -14,7 +14,7 @@ InvalidISBNFormatException: ISBN should contain only digits
  "available": true, 
  "itemsAvailable": 3 
 }
-2023-05-18 22:15:24.174 INFO LibraryItem 222 printItemJSON - {
+2023-05-19 11:28:55.112 INFO LibraryItem 223 printItemJSON - {
  "id": 1, 
  "type": "CD", 
  "title": "Origins", 
@@ -23,112 +23,113 @@ InvalidISBNFormatException: ISBN should contain only digits
  "available": true, 
  "itemsAvailable": 2 
 }
-2023-05-18 22:15:24.174 INFO User 127 printUserInfo - 
+2023-05-19 11:28:55.113 INFO User 127 printUserInfo - 
 ----------------------------
 Name: Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 No borrowed items
-2023-05-18 22:15:24.174 INFO User 144 printUserJSON - {
+2023-05-19 11:28:55.113 INFO User 144 printUserJSON - {
  "id": 1, 
  "name": "Brianna Fuentes", 
  "email": "briannafue@protonmail.net", 
  "isStudent": false 
 }
-2023-05-18 22:15:24.175 INFO Main 66 main - Here 2
-2023-05-18 22:15:24.175 INFO Main 67 main - true
-2023-05-18 22:15:24.179 INFO Main 73 main - Here 0
-2023-05-18 22:15:24.180 INFO Main 74 main - false
-2023-05-18 22:15:24.553 INFO QuotesApiClient 28 getRandomQuote - 
+2023-05-19 11:28:55.113 INFO Main 66 main - Here 2
+2023-05-19 11:28:55.113 INFO Main 67 main - true
+2023-05-19 11:28:55.120 INFO Main 73 main - Here 0
+2023-05-19 11:28:55.120 INFO Main 74 main - false
+2023-05-19 11:28:55.741 INFO QuotesApiClient 28 getRandomQuote - 
 Inspirational quote for today:
-"If a little knowledge is dangerous, where is the man who has so much as to be out of danger?" - Huxley, Thomas H.
-2023-05-18 22:15:24.563 INFO Main 78 main - 
+"No man can reveal to you nothing but that which already lies half-asleep in the dawning of your knowledge." - Khalil Gibran
+2023-05-19 11:28:55.752 INFO Main 78 main - 
 ----------------------------
 Check Out Receipt
 Uptown Library
 425-778-21-48
 www.uptown-library.org
-May 18, 2023
+May 19, 2023
 Title: To the Lighthouse
-Due: June 08, 2023
+Due: June 09, 2023
 Total items: 1
 You just saved $14.50 by using your library. 
 This is suggested retail price of the item(s) checked out.
-2023-05-18 22:15:24.563 INFO User 127 printUserInfo - 
+2023-05-19 11:28:55.752 INFO User 127 printUserInfo - 
 ----------------------------
 Name: Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 No borrowed items
-2023-05-18 22:15:24.564 INFO UserSystem 97 printAllUsersNames - The users of the library are: [Brianna Fuentes, Ria Barker, Matthew Simmons, Laura Frederick, Quinn Baldwin]
-2023-05-18 22:15:24.564 INFO UserSystem 104 printTotalNumberOfUsers - Total number of users: 5
-2023-05-18 22:15:24.567 INFO SearchService 15 findItemByAuthor - Item(s) found are [
+2023-05-19 11:28:55.753 INFO UserSystem 97 printAllUsersNames - The users of the library are: [Brianna Fuentes, Ria Barker, Matthew Simmons, Laura Frederick, Quinn Baldwin]
+2023-05-19 11:28:55.753 INFO UserSystem 104 printTotalNumberOfUsers - Total number of users: 5
+2023-05-19 11:28:55.756 INFO SearchService 15 findItemByAuthor - Item(s) found are [
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018]
-2023-05-18 22:15:24.567 INFO SearchService 26 findItemByTitle - No matching item(s) found. Please check your request.
-2023-05-18 22:15:24.568 INFO BookCheckOutStatus 31 printBookCheckouts - Number of book's checkouts by ISBN
-2023-05-18 22:15:24.568 INFO BookCheckOutStatus 32 lambda$printBookCheckouts$0 - ISBN 9780306406157: 1
-2023-05-18 22:15:24.568 INFO BookCheckOutStatus 32 lambda$printBookCheckouts$0 - ISBN 9788838439018: 2
-2023-05-18 22:15:24.569 INFO MediaCenter 60 printUsageCost - Please pay $6.40 for using media center resources
-2023-05-18 22:15:24.569 INFO MediaCenter 60 printUsageCost - Please pay $5.12 for using media center resources
-2023-05-18 22:15:24.570 INFO Event 72 printEventAttendees - Event attendees are:
-2023-05-18 22:15:24.570 INFO LinkedListCustom 54 printCustomList - 
+2023-05-19 11:28:55.756 INFO SearchService 26 findItemByTitle - No matching item(s) found. Please check your request.
+2023-05-19 11:28:55.756 INFO BookCheckOutStatus 31 printBookCheckouts - Number of book's checkouts by ISBN
+2023-05-19 11:28:55.756 INFO BookCheckOutStatus 32 lambda$printBookCheckouts$0 - ISBN 9780306406157: 1
+2023-05-19 11:28:55.757 INFO BookCheckOutStatus 32 lambda$printBookCheckouts$0 - ISBN 9788838439018: 2
+2023-05-19 11:28:55.757 INFO MediaCenter 60 printUsageCost - Please pay $6.40 for using media center resources
+2023-05-19 11:28:55.757 INFO MediaCenter 60 printUsageCost - Please pay $5.12 for using media center resources
+2023-05-19 11:28:55.758 INFO Event 72 printEventAttendees - Event attendees are:
+2023-05-19 11:28:55.758 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name: Ria Barker, 
 Email: riabarker@outlook.ca, 
 Borrowed items: The Call of the Wild - Jack London
-2023-05-18 22:15:24.570 INFO LinkedListCustom 54 printCustomList - 
+2023-05-19 11:28:55.758 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name: Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 No borrowed items
-2023-05-18 22:15:24.571 INFO LinkedListCustom 54 printCustomList - 
+2023-05-19 11:28:55.758 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name: Matthew Simmons, 
 Email: mattsimm@outlook.ca, 
 Borrowed items: Origins - Imagine Dragons
-2023-05-18 22:15:24.571 WARN LinkedListCustom 78 remove - Element is not in the list
-2023-05-18 22:15:24.571 INFO Event 72 printEventAttendees - Event attendees are:
-2023-05-18 22:15:24.571 INFO LinkedListCustom 54 printCustomList - 
+2023-05-19 11:28:55.758 WARN LinkedListCustom 78 remove - Element is not in the list
+2023-05-19 11:28:55.759 INFO Event 72 printEventAttendees - Event attendees are:
+2023-05-19 11:28:55.759 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name: Ria Barker, 
 Email: riabarker@outlook.ca, 
 Borrowed items: The Call of the Wild - Jack London
-2023-05-18 22:15:24.571 INFO LinkedListCustom 54 printCustomList - 
+2023-05-19 11:28:55.759 INFO LinkedListCustom 54 printCustomList - 
 ----------------------------
 Name: Brianna Fuentes, 
 Email: briannafue@protonmail.net, 
 No borrowed items
-2023-05-18 22:15:24.573 WARN Book 103 checkoutBook - This item is not available
-2023-05-18 22:15:24.573 INFO Main 130 main - Here 0
-2023-05-18 22:15:24.573 INFO Main 131 main - false
-2023-05-18 22:15:24.573 INFO LibraryItem 182 placeHold - You successfully placed  a hold on the item 
+2023-05-19 11:28:55.760 WARN Book 103 checkoutBook - This item is not available
+2023-05-19 11:28:55.760 INFO Main 130 main - Here 0
+2023-05-19 11:28:55.760 INFO Main 131 main - false
+2023-05-19 11:28:55.760 INFO LibraryItem 183 placeHold - You successfully placed  a hold on the item 
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018
-2023-05-18 22:15:24.574 WARN LibraryItem 184 placeHold - This item is available
-2023-05-18 22:15:24.574 INFO User 91 printItemsBorrowedByUser - User Brianna Fuenteshas borrowed the items: []
-2023-05-18 22:15:24.574 INFO User 100 printItemsOnHold - User Quinn Baldwinplaced a hold on the item: [
+2023-05-19 11:28:55.760 WARN LibraryItem 185 placeHold - This item is available
+2023-05-19 11:28:55.761 INFO User 91 printItemsBorrowedByUser - User Brianna Fuenteshas borrowed the items: []
+2023-05-19 11:28:55.761 INFO User 100 printItemsOnHold - User Quinn Baldwinplaced a hold on the item: [
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018]
-2023-05-18 22:15:24.574 INFO Main 138 main - Total books checkouts: 3
-2023-05-18 22:15:24.574 INFO Main 141 main - Total items checkouts: 4
-2023-05-18 22:15:24.575 INFO HoldItem 48 lambda$printQueueItems$0 - 
+2023-05-19 11:28:55.761 INFO Main 138 main - Total books checkouts: 3
+2023-05-19 11:28:55.761 INFO Main 141 main - Total items checkouts: 4
+2023-05-19 11:28:55.762 INFO LibrarySystem 68 lambda$printQueueItems$0 - 
 ----------------------------
 Name: Quinn Baldwin, 
 Email: baldwin77@yahoo.ca, 
 Type: Book, 
 Title: The Call of the Wild, 
 Author: Jack London
-Date: 2023-05-18 22:15:24
-2023-05-18 22:15:24.575 INFO Main 150 main - {1=[], 2=[
+Date: 2023-05-19 11:28:55
+2023-05-19 11:28:55.762 INFO LibrarySystem 86 notifyUserItemAvailable - Item "The Call of the Wild" by Jack London is available for user Quinn Baldwin
+2023-05-19 11:28:55.762 INFO Main 154 main - {1=[], 2=[
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018], 3=[
 Title: Origins
 Author: Imagine Dragons
 Length:40:02]}
-2023-05-18 22:15:24.584 INFO UserSystem 87 getStudentUsers - [
+2023-05-19 11:28:55.772 INFO UserSystem 87 getStudentUsers - [
 ----------------------------
 Name: Ria Barker, 
 Email: riabarker@outlook.ca, 
@@ -141,24 +142,20 @@ Borrowed items: Origins - Imagine Dragons,
 Name: Quinn Baldwin, 
 Email: baldwin77@yahoo.ca, 
 No borrowed items]
-2023-05-18 22:15:24.585 INFO LibrarySystem 68 getItemsNotAvailable - [
+2023-05-19 11:28:55.772 INFO LibrarySystem 96 getItemsNotAvailable - []
+2023-05-19 11:28:55.773 INFO Main 164 main - [To the Lighthouse by Virginia Woolf, The Call of the Wild by Jack London, The Lion, the Witch and the Wardrobe by C.S. Lewis]
+2023-05-19 11:28:55.773 INFO SearchService 39 findItemByTitleAndAuthor - Item(s) found are [
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018]
-2023-05-18 22:15:24.585 INFO Main 160 main - [To the Lighthouse by Virginia Woolf, The Call of the Wild by Jack London, The Lion, the Witch and the Wardrobe by C.S. Lewis]
-2023-05-18 22:15:24.586 INFO SearchService 39 findItemByTitleAndAuthor - Item(s) found are [
-Title: The Call of the Wild
-Author: Jack London
-ISBN: 9788838439018]
-2023-05-18 22:15:24.586 INFO UserSystem 75 getUsersWithOverdueItems - No users with overdue items
-2023-05-18 22:15:24.586 INFO Main 162 main - {}
-2023-05-18 22:15:24.586 INFO ChildrensBook 21 checkAgeGroup - This book is suitable for the user's age.
-2023-05-18 22:15:24.586 INFO Main 166 main - 52
-2023-05-18 22:15:24.587 INFO Main 167 main - [
+2023-05-19 11:28:55.773 INFO UserSystem 75 getUsersWithOverdueItems - No users with overdue items
+2023-05-19 11:28:55.773 INFO ChildrensBook 21 checkAgeGroup - This book is suitable for the user's age.
+2023-05-19 11:28:55.773 INFO Main 170 main - 52
+2023-05-19 11:28:55.774 INFO Main 171 main - [
 Title: The Lion, the Witch and the Wardrobe
 Author: C.S. Lewis
 ISBN: 9780064404990]
-2023-05-18 22:15:24.587 INFO Main 170 main - [
+2023-05-19 11:28:55.774 INFO Main 174 main - [
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018, 
@@ -168,106 +165,103 @@ ISBN: 9780064404990,
 Title: To the Lighthouse
 Author: Virginia Woolf
 ISBN: 9780306406157]
-2023-05-18 22:15:24.588 INFO Main 171 main - [Ria Barker[
+2023-05-19 11:28:55.774 INFO Main 175 main - [Ria Barker[
 Title: The Call of the Wild
 Author: Jack London
 ISBN: 9788838439018], Matthew Simmons[
 Title: Origins
 Author: Imagine Dragons
-Length:40:02], Laura Frederick[
-Title: The Call of the Wild
-Author: Jack London
-ISBN: 9788838439018]]
-2023-05-18 22:15:24.588 INFO MediaCenter 60 printUsageCost - Please pay $1.60 for using media center resources
-2023-05-18 22:15:24.588 INFO ReflectionPractice 31 getClassDetails - Fields: 
-2023-05-18 22:15:24.589 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: copyPrice
-2023-05-18 22:15:24.589 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: float
-2023-05-18 22:15:24.589 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: static
-2023-05-18 22:15:24.589 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: scanPrice
-2023-05-18 22:15:24.589 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: float
-2023-05-18 22:15:24.589 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: static
-2023-05-18 22:15:24.589 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: studentDiscountPercent
-2023-05-18 22:15:24.589 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: byte
-2023-05-18 22:15:24.589 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: static
-2023-05-18 22:15:24.589 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: logger
-2023-05-18 22:15:24.589 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: Logger
-2023-05-18 22:15:24.589 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: 
-2023-05-18 22:15:24.590 INFO ReflectionPractice 41 getClassDetails - Constructor: 
-2023-05-18 22:15:24.590 INFO ReflectionPractice 43 getClassDetails - Name: MediaCenter
-2023-05-18 22:15:24.590 INFO ReflectionPractice 44 getClassDetails - Access modifier: public
-2023-05-18 22:15:24.590 INFO ReflectionPractice 47 getClassDetails - Methods: 
-2023-05-18 22:15:24.590 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getCopyPrice
-2023-05-18 22:15:24.590 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: float
-2023-05-18 22:15:24.590 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.590 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: setCopyPrice
-2023-05-18 22:15:24.590 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.590 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.590 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: copyPrice
-2023-05-18 22:15:24.591 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: float
-2023-05-18 22:15:24.591 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getScanPrice
-2023-05-18 22:15:24.591 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: float
-2023-05-18 22:15:24.591 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.591 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: setScanPrice
-2023-05-18 22:15:24.591 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.591 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.591 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: scanPrice
-2023-05-18 22:15:24.591 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: float
-2023-05-18 22:15:24.591 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getStudentDiscount
-2023-05-18 22:15:24.591 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: byte
-2023-05-18 22:15:24.591 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.591 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: setStudentDiscount
-2023-05-18 22:15:24.591 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.591 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.592 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: printUsageCost
-2023-05-18 22:15:24.592 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.592 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.592 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: user
-2023-05-18 22:15:24.592 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: class User
-2023-05-18 22:15:24.592 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfCopies
-2023-05-18 22:15:24.592 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
-2023-05-18 22:15:24.592 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfScans
-2023-05-18 22:15:24.592 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
-2023-05-18 22:15:24.592 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: wait
-2023-05-18 22:15:24.592 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.592 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final
-2023-05-18 22:15:24.592 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg0
-2023-05-18 22:15:24.592 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: long
-2023-05-18 22:15:24.592 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg1
-2023-05-18 22:15:24.592 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
-2023-05-18 22:15:24.592 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: wait
-2023-05-18 22:15:24.592 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.593 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final
-2023-05-18 22:15:24.593 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: wait
-2023-05-18 22:15:24.593 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.593 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
-2023-05-18 22:15:24.593 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg0
-2023-05-18 22:15:24.593 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: long
-2023-05-18 22:15:24.593 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: equals
-2023-05-18 22:15:24.593 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: boolean
-2023-05-18 22:15:24.593 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.593 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg0
-2023-05-18 22:15:24.593 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: class java.lang.Object
-2023-05-18 22:15:24.593 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: toString
-2023-05-18 22:15:24.593 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: String
-2023-05-18 22:15:24.593 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.593 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: hashCode
-2023-05-18 22:15:24.593 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: int
-2023-05-18 22:15:24.593 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public native
-2023-05-18 22:15:24.593 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getClass
-2023-05-18 22:15:24.594 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: Class
-2023-05-18 22:15:24.594 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
-2023-05-18 22:15:24.594 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: notify
-2023-05-18 22:15:24.594 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.594 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
-2023-05-18 22:15:24.594 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: notifyAll
-2023-05-18 22:15:24.594 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
-2023-05-18 22:15:24.594 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
-2023-05-18 22:15:24.594 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: calculateUsageCost
-2023-05-18 22:15:24.594 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: double
-2023-05-18 22:15:24.594 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
-2023-05-18 22:15:24.594 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: user
-2023-05-18 22:15:24.594 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: class User
-2023-05-18 22:15:24.594 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfCopies
-2023-05-18 22:15:24.594 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
-2023-05-18 22:15:24.594 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfScans
-2023-05-18 22:15:24.594 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
+Length:40:02]]
+2023-05-19 11:28:55.775 INFO MediaCenter 60 printUsageCost - Please pay $1.60 for using media center resources
+2023-05-19 11:28:55.775 INFO ReflectionPractice 31 getClassDetails - Fields: 
+2023-05-19 11:28:55.775 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: copyPrice
+2023-05-19 11:28:55.775 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: float
+2023-05-19 11:28:55.776 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: static
+2023-05-19 11:28:55.776 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: scanPrice
+2023-05-19 11:28:55.776 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: float
+2023-05-19 11:28:55.776 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: static
+2023-05-19 11:28:55.776 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: studentDiscountPercent
+2023-05-19 11:28:55.776 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: byte
+2023-05-19 11:28:55.776 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: static
+2023-05-19 11:28:55.776 INFO ReflectionPractice 35 lambda$getClassDetails$0 - Name: logger
+2023-05-19 11:28:55.776 INFO ReflectionPractice 36 lambda$getClassDetails$0 - Type: Logger
+2023-05-19 11:28:55.776 INFO ReflectionPractice 37 lambda$getClassDetails$0 - Access modifier: 
+2023-05-19 11:28:55.776 INFO ReflectionPractice 41 getClassDetails - Constructor: 
+2023-05-19 11:28:55.776 INFO ReflectionPractice 43 getClassDetails - Name: MediaCenter
+2023-05-19 11:28:55.776 INFO ReflectionPractice 44 getClassDetails - Access modifier: public
+2023-05-19 11:28:55.776 INFO ReflectionPractice 47 getClassDetails - Methods: 
+2023-05-19 11:28:55.777 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getCopyPrice
+2023-05-19 11:28:55.777 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: float
+2023-05-19 11:28:55.777 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.777 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getScanPrice
+2023-05-19 11:28:55.777 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: float
+2023-05-19 11:28:55.777 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.777 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: setCopyPrice
+2023-05-19 11:28:55.777 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.777 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.777 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: copyPrice
+2023-05-19 11:28:55.777 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: float
+2023-05-19 11:28:55.777 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: setScanPrice
+2023-05-19 11:28:55.778 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.778 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.778 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: scanPrice
+2023-05-19 11:28:55.778 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: float
+2023-05-19 11:28:55.778 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getStudentDiscount
+2023-05-19 11:28:55.778 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: byte
+2023-05-19 11:28:55.778 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.778 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: setStudentDiscount
+2023-05-19 11:28:55.778 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.778 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.778 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: printUsageCost
+2023-05-19 11:28:55.778 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.778 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.778 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: user
+2023-05-19 11:28:55.778 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: class User
+2023-05-19 11:28:55.778 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfCopies
+2023-05-19 11:28:55.778 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
+2023-05-19 11:28:55.779 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfScans
+2023-05-19 11:28:55.779 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
+2023-05-19 11:28:55.779 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: wait
+2023-05-19 11:28:55.779 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.779 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final
+2023-05-19 11:28:55.779 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg0
+2023-05-19 11:28:55.779 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: long
+2023-05-19 11:28:55.779 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg1
+2023-05-19 11:28:55.779 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
+2023-05-19 11:28:55.779 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: wait
+2023-05-19 11:28:55.779 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.779 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final
+2023-05-19 11:28:55.779 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: wait
+2023-05-19 11:28:55.779 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.779 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
+2023-05-19 11:28:55.779 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg0
+2023-05-19 11:28:55.779 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: long
+2023-05-19 11:28:55.779 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: equals
+2023-05-19 11:28:55.780 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: boolean
+2023-05-19 11:28:55.780 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.780 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: arg0
+2023-05-19 11:28:55.780 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: class java.lang.Object
+2023-05-19 11:28:55.780 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: toString
+2023-05-19 11:28:55.780 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: String
+2023-05-19 11:28:55.780 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.780 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: hashCode
+2023-05-19 11:28:55.780 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: int
+2023-05-19 11:28:55.780 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public native
+2023-05-19 11:28:55.780 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: getClass
+2023-05-19 11:28:55.780 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: Class
+2023-05-19 11:28:55.780 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
+2023-05-19 11:28:55.780 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: notify
+2023-05-19 11:28:55.780 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.780 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
+2023-05-19 11:28:55.781 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: notifyAll
+2023-05-19 11:28:55.781 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: void
+2023-05-19 11:28:55.781 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public final native
+2023-05-19 11:28:55.781 INFO ReflectionPractice 51 lambda$getClassDetails$2 - Method name: calculateUsageCost
+2023-05-19 11:28:55.781 INFO ReflectionPractice 52 lambda$getClassDetails$2 - Return type: double
+2023-05-19 11:28:55.781 INFO ReflectionPractice 53 lambda$getClassDetails$2 - Access modifier: public
+2023-05-19 11:28:55.781 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: user
+2023-05-19 11:28:55.781 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: class User
+2023-05-19 11:28:55.781 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfCopies
+2023-05-19 11:28:55.781 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int
+2023-05-19 11:28:55.781 INFO ReflectionPractice 57 lambda$getClassDetails$1 - Name: numberOfScans
+2023-05-19 11:28:55.781 INFO ReflectionPractice 58 lambda$getClassDetails$1 - Parameter type: int

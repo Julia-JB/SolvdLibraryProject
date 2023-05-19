@@ -141,7 +141,11 @@ public class Main {
         logger.info("Total items checkouts: " + LibrarySystem.totalItemsCheckout);
 
         // Printing items in the hold queue
-        HoldItem.printQueueItems();
+        LibrarySystem.printQueueItems();
+
+        // Testing hold queue and user automatic notification functionality when item on hold is
+        // returned
+        book2.returnItem(user4); // Item "The Call of the Wild" by Jack London is available for user Quinn Baldwin
 
         // Working with HashMap
         librarySystem.updateBorrowedItemsMap(user1);
@@ -159,7 +163,7 @@ public class Main {
         librarySystem.getItemsNotAvailable();
         logger.info(librarySystem.getBooksBasicInfo());
         searchService.findItemByTitleAndAuthor("wild", "London");
-        logger.info(usersSystem.getUsersWithOverdueItems());
+        usersSystem.getUsersWithOverdueItems();
 
         // Testing enum methods
         childrensBook3.checkAgeGroup(14); // This book is suitable for the user's age.
@@ -201,5 +205,6 @@ public class Main {
 
         connectionPool.releaseConnection(connection);
         executorService.shutdown();
+
     }
 }
