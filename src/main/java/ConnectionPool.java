@@ -5,9 +5,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class ConnectionPool {
-	private final String url = "jdbc:mysql://localhost:3306/mydbbooks";
-	private final String USERNAME = "root";
-	private final String PASSWORD = "newdaytoday";
+	private final String url = Keys.SQL_URL.getKey();
+	private final String USERNAME = Keys.SQL_USERNAME.getKey();
+	private final String PASSWORD = Keys.SQL_PASSWORD.getKey();
 	private int poolSize;
 	private BlockingQueue<Connection> connectionBlockingQueue;
 
