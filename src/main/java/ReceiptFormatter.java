@@ -1,6 +1,4 @@
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -17,15 +15,10 @@ public class ReceiptFormatter {
 
 	public String formatReceipt(User user) {
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
-				Logger logger = LogManager.getLogger();
-
-				Thread headerThread = new Thread(() -> {
-					logger.info("\nInspirational quote for today: ");
-				});
-				headerThread.start();
 
 				Thread quoteThread = new Thread(new QuoteThread());
 				quoteThread.start();
+
 				try {
 					quoteThread.join(); // Wait for the thread to finish
 				} catch (InterruptedException e) {

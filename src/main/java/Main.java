@@ -1,6 +1,14 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.sql.Connection;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import static uniqueWords.UniqueWords.getUniqueWords;
 
 public class Main {
@@ -166,5 +174,32 @@ public class Main {
         ReflectionPractice.invokeMethod();
         ReflectionPractice.getClassDetails();
 
+        // Connection pool and multithreading practice
+
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+
+        ConnectionPool connectionPool = new ConnectionPool(5);
+        Connection connection = connectionPool.getConnection();
+        UserDAO userDAO = new UserDAO(connection);
+        List<User> users = new ArrayList<>(UserSystem.users);
+
+        CompletableFuture future = CompletableFuture.runAsync(() -> {
+                    for (User user : users) {
+                        UserInsertTask task = new UserInsertTask(userDAO, user);
+                        executorService.submit(task);
+                    }
+                }).thenRun(() -> {
+                    UserInsertTask task1 = new UserInsertTask(userDAO, new User(7,
+                    "James Davis", "jamesdave@gmail.com", "3605221314", false));
+                    UserInsertTask task2 = new UserInsertTask(userDAO, new User(8, "Savanna " +
+                            "Styles", "savanna24@)radio.net", "425820141", true));
+                    new Thread(task1).start();
+                    new Thread(task2).start();
+                    });
+
+            future.join();
+
+        connectionPool.releaseConnection(connection);
+        executorService.shutdown();
     }
 }

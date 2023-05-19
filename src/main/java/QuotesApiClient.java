@@ -25,7 +25,7 @@ public class QuotesApiClient {
 				JsonNode root = mapper.readTree(responseStream);
 				String quote = root.get(0).get("quote").asText();
 				String author = root.get(0).get("author").asText();
-				logger.info("\"" + quote + "\" - " + author);
+				logger.info("\nInspirational quote for today:" + "\n\"" + quote + "\" - " + author);
 			}
 		} catch (MalformedURLException e) {
 				e.printStackTrace();

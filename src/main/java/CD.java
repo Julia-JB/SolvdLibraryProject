@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 
 public class CD extends LibraryItem {
     // Fields
@@ -24,9 +23,9 @@ public class CD extends LibraryItem {
      * @return
      */
     public String toString() {
-        return String.format("\n\u001B[32mTitle:\u001B[0m %s\n" +
-                        "\u001B[32mAuthor:\u001B[0m %s\n" +
-                        "\u001B[32mLength:\u001B[0m%s",
+        return String.format("\nTitle: %s\n" +
+                        "Author: %s\n" +
+                        "Length:%s",
                 getTitle(), getAuthor(), length);
     }
 
