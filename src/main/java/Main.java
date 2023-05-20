@@ -1,5 +1,20 @@
+import employee.Employee;
+import event.Event;
+import event.EventType;
+import extra.ReflectionPractice;
+import extra.UserFileReader;
+import mediaCenter.MediaCenter;
+import receiptService.ReceiptFormatter;
+import searchService.SearchService;
+import sqlService.ConnectionPool;
+import sqlService.UserDAO;
+import sqlService.UserInsertTask;
+import user.User;
+import libraryItem.*;
+import librarySystem.LibrarySystem;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import user.UserSystem;
 
 import java.sql.Connection;
 import java.time.LocalDate;
@@ -9,13 +24,14 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
 import static uniqueWords.UniqueWords.getUniqueWords;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Logger logger = LogManager.getLogger(Main.class);
 
-        // Instantiating LibrarySystem
+        // Instantiating librarySystem.LibrarySystem
         LibrarySystem librarySystem = new LibrarySystem("Uptown Library",
                 "425-778-21-48", "www.uptown-library.org");
         UserSystem usersSystem = new UserSystem();
@@ -95,7 +111,7 @@ public class Main {
         // Printing the number of times each book was checked out
         BookCheckOutStatus.printBookCheckouts();
 
-        // Instantiating MediaCenter
+        // Instantiating mediaCenter.MediaCenter
         MediaCenter mediaCenter = new MediaCenter();
 
         // Printing formatted cost of using media center resources with and without student discount
@@ -103,7 +119,7 @@ public class Main {
         mediaCenter.printUsageCost(user2, 12, 10);
 
         // Creating a library event
-        Event event1 = new Event("Spring Book Fair", LocalDate.of(2023, 5,
+        Event event1 = new Event("Spring libraryItem.Book Fair", LocalDate.of(2023, 5,
                 1), EventType.BOOK_SALE, true);
         Event event2 = new Event("Uptown kids Adventures", LocalDate.of(2023,
                 6, 12 ), EventType.CHILDREN_STORY_TIME, true);
@@ -115,7 +131,7 @@ public class Main {
         event1.printEventAttendees();
         event1.removeEventAttendee(user3);
         event1.removeEventAttendee(user5); // 'Element is not in the list' message output
-        event1.printEventAttendees(); // Event attendees list after the removal
+        event1.printEventAttendees(); // event.Event attendees list after the removal
 
         // Instantiating the Librarian class
         Employee librarian = new Employee(1, "Dorothy Hudson", 25);
