@@ -1,4 +1,4 @@
-package libraryItem;
+package libraryItem.book;
 
 public enum AgeGroup {
 	TODDLER(0, 3, "Toddler books"),

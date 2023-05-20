@@ -1,9 +1,9 @@
-package sqlService;
+package sqlServiceConnectionPool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import extra.Keys;
+import utilities.Keys;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

@@ -1,4 +1,6 @@
-package libraryItem;
+package libraryItem.book;
+import libraryItem.ItemType;
+import libraryItem.LibraryItem;
 import user.User;
 import java.util.Objects;
 import exceptions.InvalidISBNException;
@@ -135,7 +137,7 @@ import org.apache.logging.log4j.Logger;
         }
 
         /**
-         * This method overrides equals() method to compare libraryItem.Book objects based on their ISBNs
+         * This method overrides equals() method to compare libraryItem.book.Book objects based on their ISBNs
          * @param obj
          * @return
          */
@@ -155,7 +157,7 @@ import org.apache.logging.log4j.Logger;
         }
 
         /**
-         * This method overrides hashCode() method based on libraryItem.Book object ISBN property
+         * This method overrides hashCode() method based on libraryItem.book.Book object ISBN property
          * @return
          */
         @Override

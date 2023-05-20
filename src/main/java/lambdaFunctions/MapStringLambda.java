@@ -1,6 +1,6 @@
 package lambdaFunctions;
 
-import libraryItem.Book;
+import libraryItem.book.Book;
 
 import java.util.ArrayList;
 import java.util.List;

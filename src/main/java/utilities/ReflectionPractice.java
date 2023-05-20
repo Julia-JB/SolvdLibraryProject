@@ -1,4 +1,4 @@
-package extra;
+package utilities;
 
 import user.User;
 import org.apache.logging.log4j.LogManager;

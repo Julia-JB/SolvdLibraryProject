@@ -1,14 +1,17 @@
 import employee.Employee;
 import event.Event;
 import event.EventType;
-import extra.ReflectionPractice;
-import extra.UserFileReader;
+import libraryItem.book.*;
+import libraryItem.periodic.Frequency;
+import libraryItem.periodic.Periodic;
+import utilities.ReflectionPractice;
+import utilities.UserFileReader;
 import mediaCenter.MediaCenter;
 import receiptService.ReceiptFormatter;
 import searchService.SearchService;
-import sqlService.ConnectionPool;
-import sqlService.UserDAO;
-import sqlService.UserInsertTask;
+import sqlServiceConnectionPool.ConnectionPool;
+import sqlServiceConnectionPool.UserDAO;
+import sqlServiceConnectionPool.UserInsertTask;
 import user.User;
 import libraryItem.*;
 import librarySystem.LibrarySystem;
@@ -119,7 +122,7 @@ public class Main {
         mediaCenter.printUsageCost(user2, 12, 10);
 
         // Creating a library event
-        Event event1 = new Event("Spring libraryItem.Book Fair", LocalDate.of(2023, 5,
+        Event event1 = new Event("Spring libraryItem.book.Book Fair", LocalDate.of(2023, 5,
                 1), EventType.BOOK_SALE, true);
         Event event2 = new Event("Uptown kids Adventures", LocalDate.of(2023,
                 6, 12 ), EventType.CHILDREN_STORY_TIME, true);

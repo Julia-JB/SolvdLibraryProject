@@ -1,7 +1,7 @@
 package event;
 
 import user.User;
-import user.LinkedListCustom;
+import utilities.LinkedListCustom;
 import exceptions.InvalidEventDayException;
 import librarySystem.LibrarySystem;
 import org.apache.logging.log4j.LogManager;

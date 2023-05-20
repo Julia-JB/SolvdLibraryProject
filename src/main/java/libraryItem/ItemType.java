@@ -1,7 +1,7 @@
 package libraryItem;
 
 public enum ItemType {
-	BOOK("libraryItem.Book"),
+	BOOK("libraryItem.book.Book"),
 	CD("libraryItem.CD"),
 	DVD("DVD"),
 	MAGAZINE("Magazine"),

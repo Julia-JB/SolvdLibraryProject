@@ -1,5 +1,5 @@
 package apiServiceGetQuote;
-import extra.Keys;
+import utilities.Keys;
 
 import java.io.IOException;
 import java.io.InputStream;

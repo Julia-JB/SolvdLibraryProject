@@ -220,7 +220,7 @@ public abstract class LibraryItem {
      * Abstract method to be implemented by child classes
      * @return
      */
-    abstract String formatJSON();
+    public abstract String formatJSON();
 
     /**
      * This method prints the item info in JSON format

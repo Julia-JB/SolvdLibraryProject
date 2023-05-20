@@ -1,6 +1,6 @@
-package sqlService;
+package sqlServiceConnectionPool;
 
-import extra.Keys;
+import utilities.Keys;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

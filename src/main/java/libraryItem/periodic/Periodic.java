@@ -1,4 +1,4 @@
-package libraryItem;
+package libraryItem.periodic;
 
 import libraryItem.ItemType;
 import libraryItem.LibraryItem;
@@ -53,7 +53,7 @@ public class Periodic extends LibraryItem {
         return String.format("\nTitle: %s\n" +
                         "Year: %d\n" +
                         "Number: %d\n" +
-                        "libraryItem.Frequency: %s\n",
+                        "libraryItem.periodic.Frequency: %s\n",
                 getTitle(), year, number, frequency.getDisplayName());
     }
 

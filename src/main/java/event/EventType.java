@@ -1,10 +1,10 @@
 package event;
 
 public enum EventType {
-    BOOK_DISCUSSION("libraryItem.Book discussion", true),
+    BOOK_DISCUSSION("libraryItem.book.Book discussion", true),
     AUTHOR_VISIT("Author's visit", true),
     MOVIE_SCREENING("Movie screening", true),
-    BOOK_SALE("libraryItem.Book sale", true),
+    BOOK_SALE("libraryItem.book.Book sale", true),
     CHILDREN_STORY_TIME("Children story time", false),
     CHILDREN_WORKSHOP("Children workshop", false),
     ELEMENTARY_READING_GROUP("Elementary reading group for children", false),

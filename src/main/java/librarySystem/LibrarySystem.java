@@ -1,8 +1,8 @@
 package librarySystem;
 
 import user.User;
-import libraryItem.Book;
-import libraryItem.BookGenre;
+import libraryItem.book.Book;
+import libraryItem.book.BookGenre;
 import libraryItem.LibraryItem;
 import libraryItem.HoldItem;
 import lambdaFunctions.FilterLambda;
@@ -121,7 +121,7 @@ public class LibrarySystem {
 
     /**
      * This method retrieves only children chapter books. Enums and streams practice
-     * @return List<libraryItem.Book>
+     * @return List<libraryItem.book.Book>
      */
     public List<Book> getChildrenChapterBooks() {
         List<Book> chapterBooks = books.stream()
@@ -133,7 +133,7 @@ public class LibrarySystem {
 
     /**
      * This method sorts books by title. Streams practice
-     * @return List</libraryItem.Book>
+     * @return List</libraryItem.book.Book>
      */
     public List<Book> sortBooksByTitle() {
         List<Book> sortedBooks = books.stream()

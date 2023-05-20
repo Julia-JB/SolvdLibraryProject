@@ -1,6 +1,4 @@
 package mediaCenter;
-
-import mediaCenter.MediaCenter;
 import user.User;
 
 public interface UsageCostCalculator {

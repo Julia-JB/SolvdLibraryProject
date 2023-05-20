@@ -1,6 +1,9 @@
-package libraryItem;
+package libraryItem.book;
 
-import libraryItem.Book;
+import libraryItem.ItemType;
+import libraryItem.book.AgeGroup;
+import libraryItem.book.Book;
+import libraryItem.book.BookGenre;
 
 public class ChildrensBook extends Book {
     // Fields

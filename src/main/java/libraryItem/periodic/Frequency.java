@@ -1,4 +1,4 @@
-package libraryItem;
+package libraryItem.periodic;
 
 public enum Frequency {
 	DAILY("Daily", "Published every day"),
