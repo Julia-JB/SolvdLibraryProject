@@ -199,31 +199,32 @@ public class Main {
 
         // Connection pool and multithreading practice
 
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
+//        ExecutorService executorService = Executors.newFixedThreadPool(5);
 
         ConnectionPool connectionPool = new ConnectionPool(5);
         Connection connection = connectionPool.getConnection();
         UserDAO userDAO = new UserDAO(connection);
         List<User> users = new ArrayList<>(UserSystem.users);
 
-        CompletableFuture future = CompletableFuture.runAsync(() -> {
+        CompletableFuture <Void> future = CompletableFuture.runAsync(() -> {
                     for (User user : users) {
                         UserInsertTask task = new UserInsertTask(userDAO, user);
-                        executorService.submit(task);
+                        task.run();
                     }
                 }).thenRun(() -> {
                     UserInsertTask task1 = new UserInsertTask(userDAO, new User(7,
                     "James Davis", "jamesdave@gmail.com", "3605221314", false));
                     UserInsertTask task2 = new UserInsertTask(userDAO, new User(8, "Savanna " +
                             "Styles", "savanna24@)radio.net", "425820141", true));
-                    new Thread(task1).start();
-                    new Thread(task2).start();
+                   task1.run();
+                   task2.run();
+                }).whenComplete((result, error) -> {
+                    connectionPool.releaseConnection(connection);
                     });
 
             future.join();
 
         connectionPool.releaseConnection(connection);
-        executorService.shutdown();
-
+//      executorService.shutdown();
     }
 }

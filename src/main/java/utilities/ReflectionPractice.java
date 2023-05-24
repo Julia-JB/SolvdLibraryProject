@@ -22,7 +22,6 @@ public class ReflectionPractice {
 		methodReflection.invoke(objectReflection, userObject, 2, 4);
 	};
 
-
 	public static void getClassDetails() throws Exception {
 		Logger logger = LogManager.getLogger();
 
